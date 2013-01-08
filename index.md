@@ -1,24 +1,56 @@
-## Prelude
-
-TODO
-
 # Introduction
+
+* Learn the hacker way est un tutoriel plus qu'un livre, destine a guide ceux qui desirent apprendre les
+bases d'unix.
+
+* Ce livre fonctionne de la maniere suivante:
+   * Il est organise en themes autour desquels:
+      * une serie d'exercices est propose, sans aide, avec le minimum de baggages possible. Google is your friend comme mantra.
+      * Une serie d'explication, de notes pour mieux comprendre les tenants, les aboutissants, les concepts abordes.
+      * Une serie de solution (Il y a toujours mille solutions a un meme probleme en informatique)
+
+* Apprendre de maniere didactique, rigolote, excitante, et surtout par soi-meme. Le but de ce livre est de mettre le cerveau des lecteurs en ebulitions, qu'ils aient envie d'aller plus loin, d'apprendre encore plus, de creer.
+
+* Et plus globalement a apprendre a mieux utiliser leur ordinateur. En comprendre le comportement.
+
+* Alors rapidement, Unix c'est quoi?
+   * Petit rappel de l'etat de l'informatique aujourd'hui:
+    * OS
+    * Unix et Linux
+    * Representativite de par le monde
+
 
 ### De quoi s'agit-il
 
 ### Pourquoi tout ce tintouin
 
-TODO
+* On utilise les ordinateurs quotidienement, on delai tout un tas d'operation aux ordinateurs, on leur confie notre vie, sans vraiment ni savoir les utiliser, ni comprendre comment ils fonctionnent. Confier les cles de chef soi a un inconnu? Non. Alors pourquoi confier
+
+* En plus, les ordinateurs, et tout ce qui tourne autour ont souvent la reputation d'etre complexe, complique a apprehender, une elite souvent deconsidere, alors que comme nous l'ont prouve recemment arduino et raspberry pi, ils sont fun, peuvent s'averer de veritables objets de creation, et sont un vrai sujet d'emerveillement et d'apprentissage constant.
+
+* L'informatique est un domaine "scientifique" certes, mais une opportunite incomparable de rendre la science didactiqe, rigolote, et "reel". Elle permet d'apprendre et d'exprimenter avec le minimum de bagages possibles et sans risque (blague sur marie curie, le radium tout ca)
 
 ### a destination de?
 
 #### qui
 
-TODO
+* A l'origine ecrit pour une journaliste equipee d'un mac, desireuse d'apprendre comment il marchait "vraiment".
+
+* N'importe qui, du berceau au tombeau, peut realiser ces exercices
+
+* Plus, n'importe qui devrait y trouver son compte, de celui qui veut juste se la jouer en soiree
+avec un terminal noir sur blanc, celle qui veut mieux comprendre comment ca marche vraiment, a celui ou
+celle qui veut devenir le prochain guru des hackers, et suivre le lapin blanc.
+
+* Pense pour etre didactique, progressif, et sans contrainte temporel. On peut le prendre, l'arreter, le
+reprendre, l'oublier, et y revenir.
+
 
 ### Qui a commis ceci?
 
-TODO
+* Theo crevon, ingenieur a la sauvette. Poete a l'aide de petits bouts de codes. Photographe parfois. Et ecrivain selon l'humeur. Desireux de partager, et de vulgariser, ce que sa formation et son experience lui ont fait acquerir.
+* Avec l'aide de Nathan mustaki : description
+* Avec comme cobaye totalement consentent Morgane Tual
 
 # Au jour le jour
 
