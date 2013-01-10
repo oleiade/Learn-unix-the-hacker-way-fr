@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <title>Hack it baby - </title>
   <link rel="stylesheet" href="style.css" type="text/css" />
@@ -23,6 +22,8 @@
 
   <p>&nbsp;<br></p>
 </div>
+
+<p><img src="img/learn-unix-the-hacker-way.jpg"></p>
 <div id="TOC">
 <ul>
 <li><a href="#prelude">Prelude</a></li>
@@ -42,7 +43,7 @@
 </ul></li>
 <li><a href="#les-fichiers-et-les-internets">Les fichiers et les internets</a><ul>
 <li><a href="#exercices-1">Exercices</a><ul>
-<li><a href="#préambule">Préambule</a></li>
+<li><a href="#pr&#233;ambule">Préambule</a></li>
 </ul></li>
 <li><a href="#defi-du-jour">Defi du jour</a></li>
 <li><a href="#background-1">Background</a></li>
@@ -103,12 +104,12 @@
 </ul>
 <p><strong>5</strong>. C’est quoi un systeme unix? C’est quoi la difference avec windows?</p>
 <h4 id="defi"><a href="#TOC">Defi</a></h4>
-<p>Maintenant, un vrai defi: je veux que tu trouves avec quelle commande et avec quelles options te connecter au serveur en ftp, en ligne de commande, et que tu rappatries l’episode 4 de borgen dans le dossier <code>~/Downloads</code> de ton mac :D</p>
+<p>Maintenant, un vrai defi: je veux que tu trouves avec quelle commande et avec quelles options te connecter au serveur ftp://hackerway.oleiade.com en ftp, en ligne de commande, et que tu rappatries l’episode 4 de borgen dans le dossier <code>~/Downloads</code> de ton mac :D</p>
 <p>Tu kiff hein?! :D C’est plus simple que ca en a l’air :)</p>
 <p><strong>Nota</strong></p>
 <p>Au prealable, je te conseille de lire quelques petits tutos pour comprendre ce qu’est un systeme de fichiers, a quoi ca correspond, et a quoi ca ressemble :)</p>
 <p>En gros, le systeme de fichier, c’est le nom qu’on donne a l’agencement des dossiers sur ton ordinateur, c’est la ou il, toi, et tous les utilisateurs de l’ordi vont ranger leur donne. C’est comme un gros arbre avec des branches. La plupart des systemes unix partagent cette hierarchie.</p>
-<p>Ensuite, la commande qui te sauvera toujours la vie, et qui a donne naissance au fameux RTFM (Read The Fucking Manual) est <code>man</code>. Pour chaque commande du systeme, tu as ce qu’on appelle un man. Genre, si tu tapes ‘man cat’ tu auras le manuel utilisateur de la commande cat, detaillant son utilisation, et toutes les options que tu peux lui passer.</p>
+<p>Ensuite, la commande qui te sauvera toujours la vie, et qui a donne naissance au fameux RTFM (Read The Fucking Manual) est <code>man</code>. Pour chaque commande du systeme, tu as ce qu‘on appelle un man. Genre, si tu tapes ’man cat’ tu auras le manuel utilisateur de la commande cat, detaillant son utilisation, et toutes les options que tu peux lui passer.</p>
 <p>Voila, si c’est confus (c’est pas si facile de faire un cheminement clair), hesite pas a hurler pour avoir de l’aide :D</p>
 <h4 id="background"><a href="#TOC">Background</a></h4>
 <p>TODO</p>
@@ -117,8 +118,8 @@
 <p>Sur unix, il faut le savoir tout est fichier. Un fichier est un fichier, un dossier est un fichier, même une connexion internet est un fichier, simplement ils représentent tous les informations qu’ils contiennent d’une manière différente.</p>
 <p>Tu peux a peu près tout savoir de ton ordinateur en lisant les bons fichiers tu peux a peu près tout faire en modifiant les bons fichiers.</p>
 <p>Du coup au programme d’aujourd’hui manipulation de fichier, et trifouillage avec les internets.</p>
-<h5 id="préambule"><a href="#TOC">Préambule</a></h5>
-<p><strong>1</strong>. Quelle est la différence entre ~/Desktop, /Users/morganetual/Desktop ? Quand tu tapes / et que tuappuies deux fois sur tab que se passe t’il ? Qu’en conclus-tu ? Ca ne te rappelle rien. Re-regarde la hiérarchie du système de fichier unix, ca devrait t’eclaire. Si tu ne comprends pas cette étape, HURLE.</p>
+<h5 id="pr&#233;ambule"><a href="#TOC">Préambule</a></h5>
+<p><strong>1</strong>. Quelle est la différence entre ~/Desktop, /Users/MONUTILISATEUR/Desktop ? Quand tu tapes / et que tuappuies deux fois sur tab que se passe t’il ? Qu’en conclus-tu ? Ca ne te rappelle rien. Re-regarde la hiérarchie du système de fichier unix, ca devrait t’eclaire. Si tu ne comprends pas cette étape, HURLE.</p>
 <p><strong>2</strong>. Comment lire un fichier, c’est a dire, simplement l’afficher a l’ecran. (Sans utiliser nano, ou vi: deux commande native existe deja au sein d’unix)</p>
 <p><strong>3</strong>. Comment afficher les derniers lignes d’un fichier? comment afficher les premières? Quelle est l’option commune a ces deux commandes pour lui specifier combien de ligne depuis le debut/la fin on souhaite afficher la l’ecran.</p>
 <p><strong>4</strong>. Quelle commande utiliser pour chercher des occurences (des expressions) dans un fichier. Par exemple, si tu cree un fichier avec le contenu suivant dans ~/Desktop:</p>
@@ -133,7 +134,8 @@ Easy as...
 123
 As simple as...
 Do re mi
-ABC, 123, baby, you and me</code></pre>
+ABC, 123, baby, you and me
+</code></pre>
 <ul>
 <li>Comment verifier que celui ci contient bien l’occurence 123?</li>
 <li>Comment trouver tous les fichiers dans ~/Desktop qui contienent l’occurence “As simple as…”</li>
@@ -141,8 +143,8 @@ ABC, 123, baby, you and me</code></pre>
 </ul>
 <p><strong>5</strong>. A l’aide de quelle commande peux-tu compter le nombre de lignes dans un fichier? Combien y en a t’il dans le fichier que je t’ai fait creer precedement ? :)</p>
 <p><strong>6</strong>. Quelle commande utiliser pour chercher des fichiers/dossiers sur le file system?</p>
-<p>Comment trouver a l’aide de celle-ci tous les dossiers qui se nomment <code>morganetual</code> a l’interieur de /Users ?</p>
-<p>Comment trouver a l’aide de celle-ci tous les fichiers qui s’appellent morganetual sur le disque dur, c’est a dire, a partir de / ? (n’hesite pas a revoir l’agencement et la hierarchie du filesystem unix :) )</p>
+<p>Comment trouver a l’aide de celle-ci tous les dossiers qui se nomment <code>MONUTILISATEUR</code> a l’interieur de /Users ?</p>
+<p>Comment trouver a l’aide de celle-ci tous les fichiers qui s’appellent MONUTILISATEUR sur le disque dur, c’est a dire, a partir de / ? (n’hesite pas a revoir l’agencement et la hierarchie du filesystem unix :) )</p>
 <p><strong>7</strong>. Qu’est-ce qu’un lien sur un systeme unix? Quelle commande permet d’en faire un ? Quelle difference entre un lien symbolique et un hardlink?</p>
 <p>Comment faire un lien symbolique du fichier precedemment creer dans le dossier desktop afin de pouvoir y acceder depuis <code>~/</code> ?</p>
 <p><em>Allez, des trucs plus fun maintenant.</em></p>
@@ -161,9 +163,9 @@ ABC, 123, baby, you and me</code></pre>
 <p>Cependant le shell sait faire beaucoup plus que ca, et met a disposition ce qu’on appelle des operateurs qui permette par exemple d’exprimer le <code>AND</code>(fais ceci, et, cela), le <code>OR</code> (fais ceci, ou, si ca ne marche pas, fais cela), le <code>PIPE</code>, les superior, inferior.</p>
 <p>Leur apprentissage peut etre fastidieux, moi-meme je n’en utilise quotidienement qu’un lot tres restreint. Parcours les internets pour en apprendre un peu plus et c’est parti:</p>
 <p><strong>1</strong>. Quel est l’operateur qui permet de chainer des commandes? C’est a dire de les executer a la suite les unes des autres?</p>
-<p><strong>2</strong>. Tu te rappelles le symbole <code>~</code> ? Lorsque tu l’utilise au sein des arguments d’une commande, le shell comprend qu’il doit le remplacer par le dossier principal de ton utiliser (<code>/Users/morganetual</code> sur ton mac). Il y a un autre symbole qu’il interprete comme : remplacer ce symbole par le dernier repertoire dans lequel je me situais avant celui-la, quel est-t’il ?</p>
+<p><strong>2</strong>. Tu te rappelles le symbole <code>~</code> ? Lorsque tu l’utilise au sein des arguments d’une commande, le shell comprend qu’il doit le remplacer par le dossier principal de ton utiliser (<code>/Users/MONUTILISATEUR</code> sur ton mac). Il y a un autre symbole qu’il interprete comme : remplacer ce symbole par le dernier repertoire dans lequel je me situais avant celui-la, quel est-t’il ?</p>
 <p>Il y en a encore un autre qu’il interprete comme : remplacer ce symbole par la liste de tous les elements de ce dossier, lequel est-il?</p>
-<p><strong>3</strong>. Trouve le moyen en une seule commande de : te deplacer dans le dossier <code>/Users/Morganetual/Downloads</code>, en afficher le contenu, puis te deplacer dans le dossier <code>/etc</code>, afficher les 42 dernieres lignes du fichier passwd qui s’y trouve, enfin de retourner dans le dossier <code>/Users/morganetual/Downloads</code>.</p>
+<p><strong>3</strong>. Trouve le moyen en une seule commande de : te deplacer dans le dossier <code>/Users/MONUTILISATEUR/Downloads</code>, en afficher le contenu, puis te deplacer dans le dossier <code>/etc</code>, afficher les 42 dernieres lignes du fichier passwd qui s’y trouve, enfin de retourner dans le dossier <code>/Users/MONUTILISATEUR/Downloads</code>.</p>
 <p>Attention, ici j’attend que tu utilises ce que tu as appris a point 1. et 2.</p>
 <p><strong>4</strong>. (<em>optionel parce qu’un peu complexe</em>) Il y a un operateur qu’on appelle de redirection (superieur ou inferieur) qui permet, comme son nom l’indique de rediriger la sortie d’une commande dans une autre.</p>
 <p>A l’aide de echo, sauras-tu inserer “Hello World” dans un fichier <code>mypleasure.txt</code> a l’aide de l’operateur superieur?</p>
@@ -171,21 +173,22 @@ ABC, 123, baby, you and me</code></pre>
 <p>Il est important de garder a l’esprit que toutes ces entrees, et sorties sont dites “normalisees”, ces normes sont generalement definies par ce qu’on appelle la norme POSIX (C’est pour la culture generale).</p>
 <p>Donc tu peux parfaitement, envoyer la sortie d’un programme, en tant qu’entree d’un autre. C’est trop abstrait?</p>
 <p><em>Un exemple</em>:</p>
-<p>Je peux trouver tous les fichiers qui contienent “test” dans le dossier <code>/Users/morganetual</code> en envoyant le resultat de la commande ls dans l’entree de grep, c’est l’operateur <code>pipe</code>:</p>
-<pre><code>ls /Users/morganetual | grep</code></pre>
+<p>Je peux trouver tous les fichiers qui contienent “test” dans le dossier <code>/Users/MONUTILISATEUR</code> en envoyant le resultat de la commande ls dans l’entree de grep, c’est l’operateur <code>pipe</code>:</p>
+<pre><code>ls /Users/MONUTILISATEUR | grep
+</code></pre>
 <p><strong>5</strong>. Trouve une commande qui permette de lister tous les processus en cours sur ton ordinateur, et recherche-y firefox :)</p>
 <h5 id="le-droit-de-rien-lenvie-de-tout."><a href="#TOC">Le droit de rien, l’envie de tout.</a></h5>
 <p><strong>6</strong>. Qu’est-ce qu’un groupe sur un systeme unix? qu’est-ce qu’un administrateur? quel est son nom? Comment executer une commande en tant qu’administrateur?</p>
 <p><strong>7</strong>. A l’aide de quelles options de la commande ls peut-lister en version longue l’integralite de tous les fichiers d’un dossier (tu peux au passage utiliser l’un des symboles decouverts plus haut) ?</p>
 <p>A quelle information correspond chacun des elements de la ligne?</p>
-<p>Si tu utilises cette methode sur ton dossier HOME (<code>/Users/morganetual</code> ou <code>~/</code>), et que tu compares le resultat avec ce que t’affiches le finder dans ce meme dossier, que constate-tu? Qu’est-ce qui en est la cause?</p>
+<p>Si tu utilises cette methode sur ton dossier HOME (<code>/Users/MONUTILISATEUR</code> ou <code>~/</code>), et que tu compares le resultat avec ce que t’affiches le finder dans ce meme dossier, que constate-tu? Qu’est-ce qui en est la cause?</p>
 <p><strong>8</strong>. Puisque dorenavant, tu sais quel element dans ce listing represente les droits afherents a ces fichiers, a quoi correspondent chacun des dix membres de cet elements? (d f ou l, puis r, w, ou x repetes).</p>
 <p><strong>9</strong>. Comment change t’on les droits d’un fichier? <strong>10</strong>. Comment change t’on les droits d’un dossier? <strong>11</strong>. Comment change t’on son possesseur? (owner)</p>
-<p><strong>12</strong>. Creer un fichier <code>/Users/morganetual/test</code> et change ses droits afin que l’utilisateur ai le droit d’y ecrire, de le lire, de l’executer, son groupe ai les memes droits, et qu’un utilisateur lambda n’ai le droit que de le lire. * Change le owner de ce fichier afin que ce soit root * Change le groupe de ce fichier afin que ce soit root egalement * Est-ce que sans utiliser la commande qui permet d’etre administrateur tu parviens a y ecrire dorenavant? pourquoi?</p>
+<p><strong>12</strong>. Creer un fichier <code>/Users/MONUTILISATEUR/test</code> et change ses droits afin que l’utilisateur ai le droit d’y ecrire, de le lire, de l’executer, son groupe ai les memes droits, et qu’un utilisateur lambda n’ai le droit que de le lire. * Change le owner de ce fichier afin que ce soit root * Change le groupe de ce fichier afin que ce soit root egalement * Est-ce que sans utiliser la commande qui permet d’etre administrateur tu parviens a y ecrire dorenavant? pourquoi?</p>
 <h4 id="defi-1"><a href="#TOC">Defi</a></h4>
 <p>En preambule de la suite, je voudrais que tu apprenes a utiliser la commande ssh et la commande scp.</p>
 <p>Documente toi un peu sur ce que c’est que le protocole ssh (scp en est une extension, est-ce que tu peux deviner juste a l’aide de son nom a quoi elle sert).</p>
-<p>Le but du jeu sera dans un premier temps de parvenir a te connecter au serveur ssh oleiade.com, a l’aide de ton identifiant : morgane et de ton mot de passe : asimov, via le port 4242 (tiens, tiens, c’est quoi un port unix?</p>
+<p>Le but du jeu sera dans un premier temps de parvenir a te connecter au serveur ssh hackerway.oleiade.com, a l’aide de l’identifiant : hackerway et du mot de passe : asimov, via le port 4242 (tiens, tiens, c’est quoi un port unix?</p>
 <p>Et tiens, au fait, c’est quoi tcp, aussi appelle tcp/ip, c’est quoi la difference avec udp? ) et d’y creer un fichier victoire.diditbitch dans lequel tu me mettras un super message d’amour.</p>
 <p>Puis de te deconnecter, et de telecharger ce fichier sur ton ordinateur a l’aide de la commande scp.</p>
 <p>Enfin, si tu y arrives, tu m’enverras son contenu par mail en chainant la commande cat sur ce fichier, et la command mail (qui permet, comme son nom l’indique d’envoyer des mails, elle est peu abrupte dans un premier temps, hesite pas a googler pour trouver comment l’utiliser)</p>
@@ -206,7 +209,7 @@ ABC, 123, baby, you and me</code></pre>
 <h5 id="le-shell-et-lenvironnement."><a href="#TOC">le shell et l’environnement.</a></h5>
 <p>Il y a bien longtemps, quand les ordianteurs prenaient plus de place que ton appartement, on s’y connectait a distance a partir de “terminaux”, des ecrans munis d’un clavier, et le programme charge d’interpreter tes commandes et de les transmettre a l’ordinateur s’appelait un shell.</p>
 <p>Aujourd’hui, tu as les trois dans le meme objet : ordinateur, ecran et logiciel pour transmettre tes commandes. Citons le poete : le shell est bien un coquillage, mais tu entends les “bruits” de l’ordinateur, et en plus tu peux lui parler.</p>
-<p>A chaque fois que tu lances un shell, ou interpreteur de commande, il charge un “environnment”, qui lui permet d’avoir un certain nombre d’ informations sur ton systeme et tes preferences.</p>
+<p>A chaque fois que tu lances un shell, ou interpreteur de commande, il charge un “environnment”, qui lui permet d‘avoir un certain nombre d’ informations sur ton systeme et tes preferences.</p>
 <p>Par exemple, ou sont enregistres les programmes sur ton ordinateur. Le shell te procure un certain nombre d’utilitaires integres pour te faciliter la vie, comme les <code>|</code>, les <code>&gt;&gt;</code> et <code>&lt;&lt;</code>, etc…</p>
 <p><strong>7</strong>. tape la commande <code>env</code></p>
 <p><strong>8</strong>. Dans tout le fratras qui s’affiche, quelle ligne contient :</p>
@@ -239,9 +242,10 @@ Options
       -n   No longer mark each name for export.
       -p   Display output in a form that may be reused as input.
 
-If no names are supplied, or if the `-p&#39; option is given, a list of exported names is displayed.
+If no names are supplied, or if the `-p' option is given, a list of exported names is displayed.
 
-The return status is zero unless an invalid option is supplied, one of the names is not a valid shell</code></pre>
+The return status is zero unless an invalid option is supplied, one of the names is not a valid shell
+</code></pre>
 <h4 id="background-3"><a href="#TOC">Background</a></h4>
 <p>TODO</p>
 <h3 id="shell-scripting"><a href="#TOC">Shell scripting</a></h3>

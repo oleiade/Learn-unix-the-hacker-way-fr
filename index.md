@@ -60,7 +60,7 @@ Faire joujou avec le systeme de fichier
 
 #### Defi
 
-Maintenant, un vrai defi: je veux que tu trouves avec quelle commande et avec quelles options te connecter au serveur en ftp, en ligne de commande, et que tu rappatries l'episode 4 de borgen dans le dossier `~/Downloads` de ton mac :D
+Maintenant, un vrai defi: je veux que tu trouves avec quelle commande et avec quelles options te connecter au serveur ftp://hackerway.oleiade.com en ftp, en ligne de commande, et que tu rappatries l'episode 4 de borgen dans le dossier `~/Downloads` de ton mac :D
 
 Tu kiff hein?! :D C'est plus simple que ca en a l'air :)
 
@@ -91,7 +91,7 @@ Du coup au programme d'aujourd'hui manipulation de fichier,  et trifouillage ave
 
 ##### Préambule
 
-**1**. Quelle est la différence entre ~/Desktop,  /Users/morganetual/Desktop ?  Quand tu tapes / et que tuappuies deux fois sur tab que se passe t'il ?  Qu'en conclus-tu ?  Ca ne te rappelle rien.
+**1**. Quelle est la différence entre ~/Desktop,  /Users/MONUTILISATEUR/Desktop ?  Quand tu tapes / et que tuappuies deux fois sur tab que se passe t'il ?  Qu'en conclus-tu ?  Ca ne te rappelle rien.
 Re-regarde la hiérarchie du système de fichier unix,  ca devrait t'eclaire.  Si tu ne comprends pas cette étape,  HURLE.
 
 **2**. Comment lire un fichier, c'est a dire, simplement l'afficher a l'ecran. (Sans utiliser nano, ou vi: deux commande native existe deja au sein d'unix)
@@ -121,9 +121,9 @@ Re-regarde la hiérarchie du système de fichier unix,  ca devrait t'eclaire.  S
 
 **6**. Quelle commande utiliser pour chercher des fichiers/dossiers sur le file system?
 
-Comment trouver a l'aide de celle-ci tous les dossiers qui se nomment `morganetual` a l'interieur de /Users ?
+Comment trouver a l'aide de celle-ci tous les dossiers qui se nomment `MONUTILISATEUR` a l'interieur de /Users ?
 
-Comment trouver a l'aide de celle-ci tous les fichiers qui s'appellent morganetual sur le disque dur, c'est a dire, a partir de / ? (n'hesite pas a revoir l'agencement et la hierarchie du filesystem unix :) )
+Comment trouver a l'aide de celle-ci tous les fichiers qui s'appellent MONUTILISATEUR sur le disque dur, c'est a dire, a partir de / ? (n'hesite pas a revoir l'agencement et la hierarchie du filesystem unix :) )
 
 **7**. Qu'est-ce qu'un lien sur un systeme unix? Quelle commande permet d'en faire un ? Quelle difference entre un lien symbolique et un hardlink?
 
@@ -163,11 +163,11 @@ Leur apprentissage peut etre fastidieux, moi-meme je n'en utilise quotidienement
 
 **1**. Quel est l'operateur qui permet de chainer des commandes? C'est a dire de les executer a la suite les unes des autres?
 
-**2**. Tu te rappelles le symbole `~` ? Lorsque tu l'utilise au sein des arguments d'une commande, le shell comprend qu'il doit le remplacer par le dossier principal de ton utiliser (`/Users/morganetual` sur ton mac). Il y a un autre symbole qu'il interprete comme : remplacer ce symbole par le dernier repertoire dans lequel je me situais avant celui-la, quel est-t'il ?
+**2**. Tu te rappelles le symbole `~` ? Lorsque tu l'utilise au sein des arguments d'une commande, le shell comprend qu'il doit le remplacer par le dossier principal de ton utiliser (`/Users/MONUTILISATEUR` sur ton mac). Il y a un autre symbole qu'il interprete comme : remplacer ce symbole par le dernier repertoire dans lequel je me situais avant celui-la, quel est-t'il ?
 
 Il y en a encore un autre qu'il interprete comme : remplacer ce symbole par la liste de tous les elements de ce dossier, lequel est-il?
 
-**3**. Trouve le moyen en une seule commande de : te deplacer dans le dossier `/Users/Morganetual/Downloads`, en afficher le contenu, puis te deplacer dans le dossier `/etc`, afficher les 42 dernieres lignes du fichier passwd qui s'y trouve, enfin de retourner dans le dossier `/Users/morganetual/Downloads`.
+**3**. Trouve le moyen en une seule commande de : te deplacer dans le dossier `/Users/MONUTILISATEUR/Downloads`, en afficher le contenu, puis te deplacer dans le dossier `/etc`, afficher les 42 dernieres lignes du fichier passwd qui s'y trouve, enfin de retourner dans le dossier `/Users/MONUTILISATEUR/Downloads`.
 
 Attention, ici j'attend que tu utilises ce que tu as appris a point 1. et 2.
 
@@ -183,9 +183,9 @@ Donc tu peux parfaitement, envoyer la sortie d'un programme, en tant qu'entree d
 
 *Un exemple*:
 
-Je peux trouver tous les fichiers qui contienent "test" dans le dossier `/Users/morganetual` en envoyant le resultat de la commande ls dans l'entree de grep, c'est l'operateur `pipe`:
+Je peux trouver tous les fichiers qui contienent "test" dans le dossier `/Users/MONUTILISATEUR` en envoyant le resultat de la commande ls dans l'entree de grep, c'est l'operateur `pipe`:
 
-    ls /Users/morganetual | grep
+    ls /Users/MONUTILISATEUR | grep
 
 **5**. Trouve  une commande qui permette de lister tous les processus en cours sur ton ordinateur, et recherche-y firefox :)
 
@@ -198,7 +198,7 @@ Je peux trouver tous les fichiers qui contienent "test" dans le dossier `/Users/
 
 A quelle information correspond chacun des elements de la ligne?
 
-Si tu utilises cette methode sur ton dossier HOME (`/Users/morganetual` ou `~/`), et que tu compares le resultat avec ce que t'affiches le finder dans ce meme dossier, que constate-tu? Qu'est-ce qui en est la cause?
+Si tu utilises cette methode sur ton dossier HOME (`/Users/MONUTILISATEUR` ou `~/`), et que tu compares le resultat avec ce que t'affiches le finder dans ce meme dossier, que constate-tu? Qu'est-ce qui en est la cause?
 
 
 **8**. Puisque dorenavant, tu sais quel element dans ce listing represente les droits afherents a ces fichiers, a quoi correspondent chacun des dix membres de cet elements? (d f ou l, puis r, w, ou x repetes).
@@ -207,7 +207,7 @@ Si tu utilises cette methode sur ton dossier HOME (`/Users/morganetual` ou `~/`)
 **10**. Comment change t'on les droits d'un dossier?
 **11**. Comment change t'on son possesseur? (owner)
 
-**12**. Creer un fichier `/Users/morganetual/test` et change ses droits afin que l'utilisateur ai le droit d'y ecrire, de le lire, de l'executer, son groupe ai les memes droits, et qu'un utilisateur lambda n'ai le droit que de le lire.
+**12**. Creer un fichier `/Users/MONUTILISATEUR/test` et change ses droits afin que l'utilisateur ai le droit d'y ecrire, de le lire, de l'executer, son groupe ai les memes droits, et qu'un utilisateur lambda n'ai le droit que de le lire.
 * Change le owner de ce fichier afin que ce soit root
 * Change le groupe de ce fichier afin que ce soit root egalement
 * Est-ce que sans utiliser la commande qui permet d'etre administrateur tu parviens a y ecrire dorenavant? pourquoi?
@@ -219,7 +219,7 @@ En preambule de la suite, je voudrais que tu apprenes a utiliser la commande ssh
 
 Documente toi un peu sur ce que c'est que le protocole ssh (scp en est une extension, est-ce que tu peux deviner juste a l'aide de son nom a quoi elle sert).
 
-Le but du jeu sera dans un premier temps de parvenir a te connecter au serveur ssh oleiade.com, a l'aide de ton identifiant : morgane et de ton mot de passe : asimov, via le port 4242 (tiens, tiens, c'est quoi un port unix?
+Le but du jeu sera dans un premier temps de parvenir a te connecter au serveur ssh hackerway.oleiade.com, a l'aide de l'identifiant : hackerway et du mot de passe : asimov, via le port 4242 (tiens, tiens, c'est quoi un port unix?
 
 Et tiens, au fait, c'est quoi tcp, aussi appelle tcp/ip, c'est quoi la difference avec udp? ) et d'y creer un fichier victoire.diditbitch dans lequel tu me mettras un super message d'amour.
 
