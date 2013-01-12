@@ -1,24 +1,88 @@
-## Prelude
-
-TODO
-
 # Introduction
+
+`Learn Unix the hacker way` avant d'être un livre, est un tutoriel.
+
+Il est modestement destiné à guider ceux qui desirent apprendre les fondamentaux d'Unix dans leur quête.
+
+A éclairer ceux qui souhaitent apprendre un peu plus de la chose avec qui ils passent leur journée: leur ordinateur.
+
+Ou encore, plus simplement, les intarissables curieux.
+
+
+#### D'accord, mais, Unix, c'est quoi?
+
+Et bien Unix, c'est un système d'exploitation. Crée en 1969 par deux ingenieurs des Bell labs: [Ken Thompson](http://fr.wikipedia.org/wiki/Ken_Thompson) et [Dennis Ritchie](http://fr.wikipedia.org/wiki/Dennis_Ritchie)(également créateur du langage `C`) aux etats-unis.
+
+C'est à dire que c'est "un ensemble de programmes qui dirigent l'utilisation des capacités d'un ordinateur par des logiciels applicatifs"([Source](http://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27exploitation)).
+
+C'est, en très gros, le cerveau qui permet à votre ordinateur de faire des choses, comme stocker des informations sur votre disque dur, exécuter vos applications, commander à votre écran d'afficher vos photos.
+
+Vous connaissez sans doute déjà d'autres systèmes d'exploitation, parfois même sans le savoir. Parmi eux: Windows, OSX, Linux... [TO BE CONTINUED TODO]
+
+
+#### Et comment est-ce que l'on va s'y prendre?
+
+Ce livre s'organise en sessions relatives aux thématiques des systèmes unix.
+
+Chaque session consistera en une serie d'exercices didactiques et progressifs.
+
+Suivi d'explications des concepts et de l'historique des concepts manipulés lors de ceux-ci.
+
+Enfin, des "cheat codes", en fait les solutions des exercices, au cas où les moins perseverant d'entre vous se cherchent une béquille.
+
+
+#### Et le dessein?
+
+Learn Unix the hacker way vous propose une manière didactique, excitante, parfois rigolote, mais surtout autodidacte de vous former a l'ecosystème Unix.
+
+Son but n'est pas de faire de vous des stars du clavier, quand bien même certains pourraient se découvrir une vocation.
+
+Son but n'est pas non plus de remplir votre cerveau d'un tas de connaissances que vous vous empresseriez d'oublier.
+
+Mais bien plutôt de vous apprendre à apprendre par vous-même. A chercher, vous interroger, tourner en rond, eprouver cette joie indicible de parvenir à resoudre un problème après des heures à l'avoir tourné et retourné dans tous les sens.
+
+Son but est de vous donner envie; de connaitre mieux votre camarade, j'ai nommé l'ordinateur; de maitriser ses compétences, de l'utiliser sans restrictions; d'en apprendre encore plus.
+
 
 ### De quoi s'agit-il
 
 ### Pourquoi tout ce tintouin
 
-TODO
+[ TODO:
+* On utilise les ordinateurs quotidienement, on delai tout un tas d'operation aux ordinateurs, on leur confie notre vie, sans vraiment ni savoir les utiliser, ni comprendre comment ils fonctionnent. Confier les cles de chef soi a un inconnu? Non. Alors pourquoi confier
+
+* En plus, les ordinateurs, et tout ce qui tourne autour ont souvent la reputation d'etre complexe, complique a apprehender, une elite souvent deconsidere, alors que comme nous l'ont prouve recemment arduino et raspberry pi, ils sont fun, peuvent s'averer de veritables objets de creation, et sont un vrai sujet d'emerveillement et d'apprentissage constant.
+
+* L'informatique est un domaine "scientifique" certes, mais une opportunite incomparable de rendre la science didactiqe, rigolote, et "reel". Elle permet d'apprendre et d'exprimenter avec le minimum de bagages possibles et sans risque (blague sur marie curie, le radium tout ca)
+
+]
 
 ### a destination de?
 
 #### qui
 
-TODO
+[ TODO:
+* A l'origine ecrit pour une journaliste equipee d'un mac, desireuse d'apprendre comment il marchait "vraiment".
+
+* N'importe qui, du berceau au tombeau, peut realiser ces exercices
+
+* Plus, n'importe qui devrait y trouver son compte, de celui qui veut juste se la jouer en soiree
+avec un terminal noir sur blanc, celle qui veut mieux comprendre comment ca marche vraiment, a celui ou
+celle qui veut devenir le prochain guru des hackers, et suivre le lapin blanc.
+
+* Pense pour etre didactique, progressif, et sans contrainte temporel. On peut le prendre, l'arreter, le
+reprendre, l'oublier, et y revenir.
+
+]
 
 ### Qui a commis ceci?
 
-TODO
+[ TODO:
+* Theo crevon, ingenieur a la sauvette. Poete a l'aide de petits bouts de codes. Photographe parfois. Et ecrivain selon l'humeur. Desireux de partager, et de vulgariser, ce que sa formation et son experience lui ont fait acquerir.
+* Avec l'aide de Nathan mustaki : description
+* Avec comme cobaye totalement consentent Morgane Tual
+
+]
 
 ### Nomenclature
 
