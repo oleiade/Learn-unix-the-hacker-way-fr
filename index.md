@@ -22,61 +22,199 @@ TODO
 
 # Au jour le jour
 
-### C'est quoi un file-system
+### Les commandes et le file-system
 
 #### Exercices
 
-Faire joujou avec le systeme de fichier
+**1**. Trouve comment ouvrir un terminal.
 
-**1**. Trouver comme ouvrir un terminal. (Le mettre en blanc sur noir, celui par defaut d'OSX pique les yeux, genre... aie)
-
-**2**. Te documenter pour savoir ce qu'est une commande
+**2**. Maintenant, documente toi pour savoir ce qu'est une commande sur un système Unix.
 
 **3**. Quelle est la syntaxe pour passer des options a une commande?
 
-**4**. Trouver les commandes qui permettent d'effectuer les actions suivantes :
+**4**. Trouve les commandes qui permettent d'effectuer les actions suivantes :
 
-* Imprimer a l'ecran l'endroit sur le systeme de fichier ou tu te trouves actuelement
+* Imprimer à l'écran l'endroit sur le système de fichier ou tu te trouves actuelement.
 
-* Lister le contenu d'un dossier + lister recursivement le contenu d'un dossier (c'est une option) + lister les fichiers en affichant leur date de creation, l'utilisateur qui les a creer, et les droits que celui ci a dessus ( on verra plus en profondeur les droits plus tard))
+* Lister le contenu d'un dossier. Quelle option passée à cette commande permet de lui faire lister **recursivement** le contenu d'un dossier ? Quelle combinaison d'options permet de lister les fichiers en affichant leur **date de creation**, **l'utilisateur** qui les a crée, et les droits que celui ci a dessus ( on verra plus en détail les droits plus tard)
 
-    * Se deplacer dans le systeme de fichier
+* Se déplacer dans le système de fichier.
 
-    * Copier un fichier + copier un dossier
+* Copier un fichier. Ainsi que l'option qui permet à celle-ci de copier un dossier.
 
-    * Deplacer un fichier + deplacer un dossier
+* Deplacer un fichier. Déplacer un dossier.
 
-    * Renommer un fichier (pas une commande en soi :) ) + renommer un dossier
+* Renommer un fichier (Ce n'est pas nécéssairement une nouvelle commande). Renommer un dossier.
 
-    * Effacer un fichier + effacer un dossier
+* Effacer un fichier. Ainsi que l'option qui permet à celle-ci d'effacer un dossier.
 
-    * Creer un dossier
+* Créer un dossier.
 
-    * Creer un fichier
+* Créer un fichier.
 
-    * Ecrire dans un fichier ( tu peux utiliser un petit outil en ligne de commande baptise nano, familiarise toi avec, il est tres tres simple, et tres pratique) + le sauver sur `~/Desktop` ( tiens d'ailleurs, a quoi correspond le tilde? )
+* Ecrire dans un fichier et le sauver dans ~/Desktop. 
 
-**5**. C'est quoi un systeme unix? C'est quoi la difference avec windows?
+    **Nota**: Tu peux utiliser un petit outil en ligne de commande présent par défaut sur la plupart des systèmes unix baptisé nano. Familiarise toi avec, il est très très simple d'utilisation, et s'avérera très pratique.
 
-#### Defi
+**5**. Documente toi un petit peu pour être apte à répondre à la question: Mais au fait, c'est quoi un système unix? C'est quoi la difference avec windows?
 
-Maintenant, un vrai defi: je veux que tu trouves avec quelle commande et avec quelles options te connecter au serveur ftp://hackerway.oleiade.com en ftp, en ligne de commande, et que tu rappatries l'episode 4 de borgen dans le dossier `~/Downloads` de ton mac :D
 
-Tu kiff hein?! :D C'est plus simple que ca en a l'air :)
+#### Défi
 
-**Nota**
+Maintenant, un défi, pour pratiquer sur un cas concret: Trouve avec quelle commande et quelles options te connecter au serveur hackerway.oleiade.com via le protocole ftp en ligne de commande. Une fois connecté, trouve le moyen de rappatrier le fichier `defi_ftp` dans le dossier sur ta machine `~/Downloads` (si ce second n'existe pas, crée le)
 
-Au prealable, je te conseille de lire quelques petits tutos pour comprendre ce qu'est un systeme de fichiers, a quoi ca correspond, et a quoi ca ressemble :)
+**Note pour les pessimistes**: C'est plus simple que ca en a l'air.
 
-En gros, le systeme de fichier, c'est le nom qu'on donne a l'agencement des dossiers sur ton ordinateur, c'est la ou il, toi, et tous les utilisateurs de l'ordi vont ranger leur donne. C'est comme un gros arbre avec des branches. La plupart des systemes unix partagent cette hierarchie.
 
-Ensuite, la commande qui te sauvera toujours la vie, et qui a donne naissance au fameux RTFM (Read The Fucking Manual) est `man`. Pour chaque commande du systeme, tu as ce qu'on appelle un man. Genre, si tu tapes 'man cat' tu auras le manuel utilisateur de la commande cat, detaillant son utilisation, et toutes les options que tu peux lui passer.
+**Au préalable**
 
-Voila, si c'est confus (c'est pas si facile de faire un cheminement clair), hesite pas a hurler pour avoir de l'aide :D
+Je te conseille de lire quelques petits tutoriels pour comprendre ce qu'est un système de fichiers, à quoi ça correspond, et surtout à quoi ca ressemble.
+
+Le système de fichier, c'est le nom qu'on donne à l'agencement des fichiers et dossiers sur ton ordinateur. C'est là où il, toi, et tous les utilisateurs du système vont ranger leur données.
+
+Tu peux le considérer comme un gros arbre avec des branches.La plupart des systemès unix partagent cette hiérarchie.
+
+Ensuite, sache que la commande qui te sauvera **toujours** la vie, et qui a donné naissance à la fameuse réplique "RTFM" (Read The Fucking Manual) sur les forums techniques est `man`.
+
+Pour chaque commande du système, tu as ce qu'on appelle un `man`. Par exemple, si tu tapes 'man cat' le manuel d'utilisation de la commande `cat`, detaillant son utilisation et toutes les options que tu peux lui passer s'affichera à l'écran.
+
 
 #### Background
 
+###### Le systeme de fichier
+
 TODO
+
+###### Le terminal
+
+TODO
+
+###### Le shell
+
+TODO
+
+###### Anatomie d'une commande unix
+
+TODO
+
+###### Les wildcard
+
+TODO
+
+###### Un protocole
+
+TODO
+
+
+#### Cheat codes
+
+###### Ouvrir un terminal
+
+* **Raspberry Pi** : Si vous vous exercez sur cette plateforme, c'est que vous etes probablement deja au fait de l'utilisation d'un terminal.
+
+* **OSX** : L'application `Terminal` se trouve dans `/Applications/Utilitaires`
+
+* **Linux**: Généralement, sur les distributions Linux, vous trouverez le terminal dans le menu `Applications` puis dans la section `Utilitaires` ou `Outils système` ou assimilés.
+
+###### Une commande unix
+
+* Voir [[ Anatomie d'une commande unix ]]
+
+###### Passer une option à une commande
+
+Généralement une même option d'une commande unix à deux syntaxes possibles. Elle se distingue par le nombre de tirets qui la précède: 1 ou 2.
+
+Lorsqu'une option est passée à l'aide d'un seul tiret, son nom ne se compose que d'une seule lettre. 
+
+Cependant on peut cumuler à la suite d'un seul tiret autant d'options composée d'une lettre unique qu'on le souhaite.
+
+Par exemple, sont valides:
+
+`macommande -o` et `macommande -oadks` ainsi que `macommande -o -a -d -k -s`
+
+Par ailleurs, certaines options nécéssitent de leur passer une valeur, d'autres agissent comme des "flags" et ne nécéssitent de passer aucune valeur.
+
+Une option peut généralement être utilisée avant, ou après les arguments obligatoires de cette commande ( par exemple la commande `ls` prend obligatoirement une série de chemins dont elle devra lister le contenu).
+
+Exemples: 
+
+* Avec une option écrite avec un tiret simple et en passant une valeur
+
+    `macommande arg1 -o [valeurdeloption]`
+
+    ou 
+
+    `macommande -o [valeurdeloption] arg1`
+
+* Qui géneralement a sa variante en toutes lettres précédée par deux tirets
+
+    `macommande --option [valeurdeloption] arg1`
+
+###### Commandes
+
+* Imprimer à l'ecran l'endroit où l'on se trouve
+
+    `pwd`
+
+* Lister le contenu d'un dossier
+
+    `ls`
+
+* Lister récursivement le contenu d'un dossier
+
+    `ls -R`
+
+* Lister les fichiers ainsi que leur date de création, l'utilisateur qui les a crée et les droits afférents à celui-ci.
+
+    `ls -la 
+
+* Se déplacer dans le système de fichiers
+
+    `cd madestination`
+
+* Copier un fichier
+
+    `cp monfichier madestination`
+
+* Copier un dossier
+
+    `cp -r mondossier ma destination`
+
+* Déplacer un fichier ou un dossier
+
+    `mv monfichieroudossier destination`
+
+* Renommer un fichier ou un dossier
+
+    Généralement, on utilise également la commande `mv` pour renommer des fichiers et dossiers.
+
+    Attention cependant, lorsque vous renommez un fichier ou dossier dans un endroit différent de celui où vous vous trouvez actuelement en utilisant `mv`, il est important de respecter le chemin complet du fichier de départ ainsi que du fichier d'arrivée.
+
+    `mv monfichier nouveaunomdufichier`
+
+* Effacer un fichier
+
+    `rm monfichier`
+
+* Effacer un dossier
+
+    `rm -rf mondossier`
+
+* Créer un dossier
+
+    `mkdir mondossier`
+
+    Lorsque vous souhaitez créer une imbrication de dossiers en une seule commande, vous pouvez utiliser l'option `-p`
+
+    `mkdir mondossier/imbrique1/imbrique2`
+
+* Créer un fichier
+
+    `touch monfichier`
+
+* Créer et écrire dans un fichier sur `~/Desktop`
+
+    `nano ~/Desktop`
 
 
 ### Les fichiers et les internets

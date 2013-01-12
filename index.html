@@ -36,10 +36,23 @@
 <li><a href="#qui-a-commis-ceci">Qui a commis ceci?</a></li>
 </ul></li>
 <li><a href="#au-jour-le-jour">Au jour le jour</a><ul>
-<li><a href="#cest-quoi-un-file-system">C’est quoi un file-system</a><ul>
+<li><a href="#les-commandes-et-le-file-system">Les commandes et le file-system</a><ul>
 <li><a href="#exercices">Exercices</a></li>
-<li><a href="#defi">Defi</a></li>
-<li><a href="#background">Background</a></li>
+<li><a href="#défi">Défi</a></li>
+<li><a href="#background">Background</a><ul>
+<li><a href="#le-systeme-de-fichier">Le systeme de fichier</a></li>
+<li><a href="#le-terminal">Le terminal</a></li>
+<li><a href="#le-shell">Le shell</a></li>
+<li><a href="#anatomie-dune-commande-unix">Anatomie d’une commande unix</a></li>
+<li><a href="#les-wildcard">Les wildcard</a></li>
+<li><a href="#un-protocole">Un protocole</a></li>
+</ul></li>
+<li><a href="#cheat-codes">Cheat codes</a><ul>
+<li><a href="#ouvrir-un-terminal">Ouvrir un terminal</a></li>
+<li><a href="#une-commande-unix">Une commande unix</a></li>
+<li><a href="#passer-une-option-à-une-commande">Passer une option à une commande</a></li>
+<li><a href="#commandes">Commandes</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#les-fichiers-et-les-internets">Les fichiers et les internets</a><ul>
 <li><a href="#exercices-1">Exercices</a><ul>
@@ -53,7 +66,7 @@
 <li><a href="#un-peu-plus-sur-le-shell">Un peu plus sur le shell</a></li>
 <li><a href="#le-droit-de-rien-lenvie-de-tout.">Le droit de rien, l’envie de tout.</a></li>
 </ul></li>
-<li><a href="#defi-1">Defi</a></li>
+<li><a href="#defi">Defi</a></li>
 <li><a href="#background-2">Background</a></li>
 </ul></li>
 <li><a href="#rollback">Rollback</a><ul>
@@ -63,7 +76,7 @@
 </ul></li>
 <li><a href="#shell-scripting">Shell scripting</a><ul>
 <li><a href="#exercices-3">Exercices</a></li>
-<li><a href="#defi-2">Defi:</a></li>
+<li><a href="#defi-1">Defi:</a></li>
 <li><a href="#background-4">Background</a></li>
 </ul></li>
 </ul></li>
@@ -81,38 +94,111 @@
 <h3 id="qui-a-commis-ceci"><a href="#TOC">Qui a commis ceci?</a></h3>
 <p>TODO</p>
 <h1 id="au-jour-le-jour"><a href="#TOC">Au jour le jour</a></h1>
-<h3 id="cest-quoi-un-file-system"><a href="#TOC">C’est quoi un file-system</a></h3>
+<h3 id="les-commandes-et-le-file-system"><a href="#TOC">Les commandes et le file-system</a></h3>
 <h4 id="exercices"><a href="#TOC">Exercices</a></h4>
-<p>Faire joujou avec le systeme de fichier</p>
-<p><strong>1</strong>. Trouver comme ouvrir un terminal. (Le mettre en blanc sur noir, celui par defaut d’OSX pique les yeux, genre… aie)</p>
-<p><strong>2</strong>. Te documenter pour savoir ce qu’est une commande</p>
+<p><strong>1</strong>. Trouve comment ouvrir un terminal.</p>
+<p><strong>2</strong>. Maintenant, documente toi pour savoir ce qu’est une commande sur un système Unix.</p>
 <p><strong>3</strong>. Quelle est la syntaxe pour passer des options a une commande?</p>
-<p><strong>4</strong>. Trouver les commandes qui permettent d’effectuer les actions suivantes :</p>
+<p><strong>4</strong>. Trouve les commandes qui permettent d’effectuer les actions suivantes :</p>
 <ul>
-<li><p>Imprimer a l’ecran l’endroit sur le systeme de fichier ou tu te trouves actuelement</p></li>
-<li><p>Lister le contenu d’un dossier + lister recursivement le contenu d’un dossier (c’est une option) + lister les fichiers en affichant leur date de creation, l’utilisateur qui les a creer, et les droits que celui ci a dessus ( on verra plus en profondeur les droits plus tard))</p>
-<ul>
-<li><p>Se deplacer dans le systeme de fichier</p></li>
-<li><p>Copier un fichier + copier un dossier</p></li>
-<li><p>Deplacer un fichier + deplacer un dossier</p></li>
-<li><p>Renommer un fichier (pas une commande en soi :) ) + renommer un dossier</p></li>
-<li><p>Effacer un fichier + effacer un dossier</p></li>
-<li><p>Creer un dossier</p></li>
-<li><p>Creer un fichier</p></li>
-<li><p>Ecrire dans un fichier ( tu peux utiliser un petit outil en ligne de commande baptise nano, familiarise toi avec, il est tres tres simple, et tres pratique) + le sauver sur <code>~/Desktop</code> ( tiens d’ailleurs, a quoi correspond le tilde? )</p></li>
-</ul></li>
+<li><p>Imprimer à l’écran l’endroit sur le système de fichier ou tu te trouves actuelement.</p></li>
+<li><p>Lister le contenu d’un dossier. Quelle option passée à cette commande permet de lui faire lister <strong>recursivement</strong> le contenu d’un dossier ? Quelle combinaison d’options permet de lister les fichiers en affichant leur <strong>date de creation</strong>, <strong>l’utilisateur</strong> qui les a crée, et les droits que celui ci a dessus ( on verra plus en détail les droits plus tard)</p></li>
+<li><p>Se déplacer dans le système de fichier.</p></li>
+<li><p>Copier un fichier. Ainsi que l’option qui permet à celle-ci de copier un dossier.</p></li>
+<li><p>Deplacer un fichier. Déplacer un dossier.</p></li>
+<li><p>Renommer un fichier (Ce n’est pas nécéssairement une nouvelle commande). Renommer un dossier.</p></li>
+<li><p>Effacer un fichier. Ainsi que l’option qui permet à celle-ci d’effacer un dossier.</p></li>
+<li><p>Créer un dossier.</p></li>
+<li><p>Créer un fichier.</p></li>
+<li><p>Ecrire dans un fichier et le sauver dans ~/Desktop.</p>
+<p><strong>Nota</strong>: Tu peux utiliser un petit outil en ligne de commande présent par défaut sur la plupart des systèmes unix baptisé nano. Familiarise toi avec, il est très très simple d’utilisation, et s’avérera très pratique.</p></li>
 </ul>
-<p><strong>5</strong>. C’est quoi un systeme unix? C’est quoi la difference avec windows?</p>
-<h4 id="defi"><a href="#TOC">Defi</a></h4>
-<p>Maintenant, un vrai defi: je veux que tu trouves avec quelle commande et avec quelles options te connecter au serveur ftp://hackerway.oleiade.com en ftp, en ligne de commande, et que tu rappatries l’episode 4 de borgen dans le dossier <code>~/Downloads</code> de ton mac :D</p>
-<p>Tu kiff hein?! :D C’est plus simple que ca en a l’air :)</p>
-<p><strong>Nota</strong></p>
-<p>Au prealable, je te conseille de lire quelques petits tutos pour comprendre ce qu’est un systeme de fichiers, a quoi ca correspond, et a quoi ca ressemble :)</p>
-<p>En gros, le systeme de fichier, c’est le nom qu’on donne a l’agencement des dossiers sur ton ordinateur, c’est la ou il, toi, et tous les utilisateurs de l’ordi vont ranger leur donne. C’est comme un gros arbre avec des branches. La plupart des systemes unix partagent cette hierarchie.</p>
-<p>Ensuite, la commande qui te sauvera toujours la vie, et qui a donne naissance au fameux RTFM (Read The Fucking Manual) est <code>man</code>. Pour chaque commande du systeme, tu as ce qu’on appelle un man. Genre, si tu tapes ‘man cat’ tu auras le manuel utilisateur de la commande cat, detaillant son utilisation, et toutes les options que tu peux lui passer.</p>
-<p>Voila, si c’est confus (c’est pas si facile de faire un cheminement clair), hesite pas a hurler pour avoir de l’aide :D</p>
+<p><strong>5</strong>. Documente toi un petit peu pour être apte à répondre à la question: Mais au fait, c’est quoi un système unix? C’est quoi la difference avec windows?</p>
+<h4 id="défi"><a href="#TOC">Défi</a></h4>
+<p>Maintenant, un défi, pour pratiquer sur un cas concret: Trouve avec quelle commande et quelles options te connecter au serveur hackerway.oleiade.com via le protocole ftp en ligne de commande. Une fois connecté, trouve le moyen de rappatrier le fichier <code>defi_ftp</code> dans le dossier sur ta machine <code>~/Downloads</code> (si ce second n’existe pas, crée le)</p>
+<p><strong>Note pour les pessimistes</strong>: C’est plus simple que ca en a l’air.</p>
+<p><strong>Au préalable</strong></p>
+<p>Je te conseille de lire quelques petits tutoriels pour comprendre ce qu’est un système de fichiers, à quoi ça correspond, et surtout à quoi ca ressemble.</p>
+<p>Le système de fichier, c’est le nom qu’on donne à l’agencement des fichiers et dossiers sur ton ordinateur. C’est là où il, toi, et tous les utilisateurs du système vont ranger leur données.</p>
+<p>Tu peux le considérer comme un gros arbre avec des branches.La plupart des systemès unix partagent cette hiérarchie.</p>
+<p>Ensuite, sache que la commande qui te sauvera <strong>toujours</strong> la vie, et qui a donné naissance à la fameuse réplique “RTFM” (Read The Fucking Manual) sur les forums techniques est <code>man</code>.</p>
+<p>Pour chaque commande du système, tu as ce qu’on appelle un <code>man</code>. Par exemple, si tu tapes ‘man cat’ le manuel d’utilisation de la commande <code>cat</code>, detaillant son utilisation et toutes les options que tu peux lui passer s’affichera à l’écran.</p>
 <h4 id="background"><a href="#TOC">Background</a></h4>
+<h6 id="le-systeme-de-fichier"><a href="#TOC">Le systeme de fichier</a></h6>
 <p>TODO</p>
+<h6 id="le-terminal"><a href="#TOC">Le terminal</a></h6>
+<p>TODO</p>
+<h6 id="le-shell"><a href="#TOC">Le shell</a></h6>
+<p>TODO</p>
+<h6 id="anatomie-dune-commande-unix"><a href="#TOC">Anatomie d’une commande unix</a></h6>
+<p>TODO</p>
+<h6 id="les-wildcard"><a href="#TOC">Les wildcard</a></h6>
+<p>TODO</p>
+<h6 id="un-protocole"><a href="#TOC">Un protocole</a></h6>
+<p>TODO</p>
+<h4 id="cheat-codes"><a href="#TOC">Cheat codes</a></h4>
+<h6 id="ouvrir-un-terminal"><a href="#TOC">Ouvrir un terminal</a></h6>
+<ul>
+<li><p><strong>Raspberry Pi</strong> : Si vous vous exercez sur cette plateforme, c’est que vous etes probablement deja au fait de l’utilisation d’un terminal.</p></li>
+<li><p><strong>OSX</strong> : L’application <code>Terminal</code> se trouve dans <code>/Applications/Utilitaires</code></p></li>
+<li><p><strong>Linux</strong>: Généralement, sur les distributions Linux, vous trouverez le terminal dans le menu <code>Applications</code> puis dans la section <code>Utilitaires</code> ou <code>Outils système</code> ou assimilés.</p></li>
+</ul>
+<h6 id="une-commande-unix"><a href="#TOC">Une commande unix</a></h6>
+<ul>
+<li>Voir [[ Anatomie d’une commande unix ]]</li>
+</ul>
+<h6 id="passer-une-option-à-une-commande"><a href="#TOC">Passer une option à une commande</a></h6>
+<p>Généralement une même option d’une commande unix à deux syntaxes possibles. Elle se distingue par le nombre de tirets qui la précède: 1 ou 2.</p>
+<p>Lorsqu’une option est passée à l’aide d’un seul tiret, son nom ne se compose que d’une seule lettre.</p>
+<p>Cependant on peut cumuler à la suite d’un seul tiret autant d’options composée d’une lettre unique qu’on le souhaite.</p>
+<p>Par exemple, sont valides:</p>
+<p><code>macommande -o</code> et <code>macommande -oadks</code> ainsi que <code>macommande -o -a -d -k -s</code></p>
+<p>Par ailleurs, certaines options nécéssitent de leur passer une valeur, d’autres agissent comme des “flags” et ne nécéssitent de passer aucune valeur.</p>
+<p>Une option peut généralement être utilisée avant, ou après les arguments obligatoires de cette commande ( par exemple la commande <code>ls</code> prend obligatoirement une série de chemins dont elle devra lister le contenu).</p>
+<p>Exemples:</p>
+<ul>
+<li><p>Avec une option écrite avec un tiret simple et en passant une valeur</p>
+<p><code>macommande arg1 -o [valeurdeloption]</code></p>
+<p>ou</p>
+<p><code>macommande -o [valeurdeloption] arg1</code></p></li>
+<li><p>Qui géneralement a sa variante en toutes lettres précédée par deux tirets</p>
+<p><code>macommande --option [valeurdeloption] arg1</code></p></li>
+</ul>
+<h6 id="commandes"><a href="#TOC">Commandes</a></h6>
+<ul>
+<li><p>Imprimer à l’ecran l’endroit où l’on se trouve</p>
+<p><code>pwd</code></p></li>
+<li><p>Lister le contenu d’un dossier</p>
+<p><code>ls</code></p></li>
+<li><p>Lister récursivement le contenu d’un dossier</p>
+<p><code>ls -R</code></p></li>
+<li><p>Lister les fichiers ainsi que leur date de création, l’utilisateur qui les a crée et les droits afférents à celui-ci.</p>
+<p>`ls -la</p></li>
+<li><p>Se déplacer dans le système de fichiers</p>
+<p><code>cd madestination</code></p></li>
+<li><p>Copier un fichier</p>
+<p><code>cp monfichier madestination</code></p></li>
+<li><p>Copier un dossier</p>
+<p><code>cp -r mondossier ma destination</code></p></li>
+<li><p>Déplacer un fichier ou un dossier</p>
+<p><code>mv monfichieroudossier destination</code></p></li>
+<li><p>Renommer un fichier ou un dossier</p>
+<p>Généralement, on utilise également la commande <code>mv</code> pour renommer des fichiers et dossiers.</p>
+<p>Attention cependant, lorsque vous renommez un fichier ou dossier dans un endroit différent de celui où vous vous trouvez actuelement en utilisant <code>mv</code>, il est important de respecter le chemin complet du fichier de départ ainsi que du fichier d’arrivée.</p>
+<p><code>mv monfichier nouveaunomdufichier</code></p></li>
+<li><p>Effacer un fichier</p>
+<p><code>rm monfichier</code></p></li>
+<li><p>Effacer un dossier</p>
+<p><code>rm -rf mondossier</code></p></li>
+<li><p>Créer un dossier</p>
+<p><code>mkdir mondossier</code></p>
+<p>Lorsque vous souhaitez créer une imbrication de dossiers en une seule commande, vous pouvez utiliser l’option <code>-p</code></p>
+<p><code>mkdir mondossier/imbrique1/imbrique2</code></p></li>
+<li><p>Créer un fichier</p>
+<p><code>touch monfichier</code></p></li>
+<li><p>Créer et écrire dans un fichier sur <code>~/Desktop</code></p>
+<p><code>nano ~/Desktop</code></p></li>
+</ul>
 <h3 id="les-fichiers-et-les-internets"><a href="#TOC">Les fichiers et les internets</a></h3>
 <h4 id="exercices-1"><a href="#TOC">Exercices</a></h4>
 <p>Sur unix, il faut le savoir tout est fichier. Un fichier est un fichier, un dossier est un fichier, même une connexion internet est un fichier, simplement ils représentent tous les informations qu’ils contiennent d’une manière différente.</p>
@@ -183,7 +269,7 @@ ABC, 123, baby, you and me</code></pre>
 <p><strong>8</strong>. Puisque dorenavant, tu sais quel element dans ce listing represente les droits afherents a ces fichiers, a quoi correspondent chacun des dix membres de cet elements? (d f ou l, puis r, w, ou x repetes).</p>
 <p><strong>9</strong>. Comment change t’on les droits d’un fichier? <strong>10</strong>. Comment change t’on les droits d’un dossier? <strong>11</strong>. Comment change t’on son possesseur? (owner)</p>
 <p><strong>12</strong>. Creer un fichier <code>/Users/MONUTILISATEUR/test</code> et change ses droits afin que l’utilisateur ai le droit d’y ecrire, de le lire, de l’executer, son groupe ai les memes droits, et qu’un utilisateur lambda n’ai le droit que de le lire. * Change le owner de ce fichier afin que ce soit root * Change le groupe de ce fichier afin que ce soit root egalement * Est-ce que sans utiliser la commande qui permet d’etre administrateur tu parviens a y ecrire dorenavant? pourquoi?</p>
-<h4 id="defi-1"><a href="#TOC">Defi</a></h4>
+<h4 id="defi"><a href="#TOC">Defi</a></h4>
 <p>En preambule de la suite, je voudrais que tu apprenes a utiliser la commande ssh et la commande scp.</p>
 <p>Documente toi un peu sur ce que c’est que le protocole ssh (scp en est une extension, est-ce que tu peux deviner juste a l’aide de son nom a quoi elle sert).</p>
 <p>Le but du jeu sera dans un premier temps de parvenir a te connecter au serveur ssh hackerway.oleiade.com, a l’aide de l’identifiant : hackerway et du mot de passe : asimov, via le port 4242 (tiens, tiens, c’est quoi un port unix?</p>
@@ -265,7 +351,7 @@ The return status is zero unless an invalid option is supplied, one of the names
 <p>Fait les tests en changeant la valeur de DESTINY dans ton environement avant de lancer le script.</p>
 <p><strong>5</strong>. A l’aide d’une boucle (indice : for (beaucoup d’exemples sur les internets)), cree dix fichier test_n avec n de 1 a 10 et dans chacun d’entre eux, insere “I’m VALEURDEN” :) dans un dossier suffix_test dans /tmp (la notion de droit peut entrer en ligne de compte)</p>
 <p><strong>6</strong>. A l’aide d’une boucle et d’expressions conditionelles, affiche les contenu de tous les fichiers precedement cree dont le suffixe n est pair. Puis dont le suffixe n est impair.</p>
-<h4 id="defi-2"><a href="#TOC">Defi:</a></h4>
+<h4 id="defi-1"><a href="#TOC">Defi:</a></h4>
 <p>Je voudrais que tu ecrives un premier script shell quicree un dossier “medias” dans ~/Downloads, et qui cree 10 fichiers suffixes (n, comme dans les precedents exercices) avec comme extensions .avi, 10 autres suffixes avec l’extension .jpg, et encore 10 autres suffixes avec l’extension .mp3.</p>
 <p>Et qu’ensuite tu ecrives un second script qui cree au sein du dossier “medias” precedemment cree trois autres sous-dossiers : films, photos, musique. Et que celui-ci deplace tous les fichiers dans medias avec l’extension avi dans films, tous ceux avec l’extension jpg dans photos, et tous ceux avec l’extension mp3 dans musique.</p>
 <p>Voila voila, si tu trouves ca plus dur, c’est tout a fait normal. Mais comme toujours la cle de tout ca, c’est la pratique, la perseverance, et l’espoir de decouvrir un langage plus simple, plus joli et plus puissant… Un jour il sera tiens, ohhhh oui un jour il sera tiens!</p>
