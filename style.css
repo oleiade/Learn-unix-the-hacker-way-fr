@@ -1,3 +1,14 @@
+/*
+** Colors palette
+**
+** mustard: #847202;
+** light blue: #1F394A;
+** dark grey: #29262D;
+** soft grey: #584A49;
+** dark blue: #0F1640;
+*/
+
+
 h1,
 h2,
 h3,
@@ -17,10 +28,11 @@ body {
     margin: 10px 13px 10px 13px;
 }
 a {
-    color: #0069d6;
+    color: #1F394A;
+    text-decoration: none;
 }
 a:hover {
-    color: #0050a3;
+    color: #29262D;
     text-decoration: none;
 }
 a img {
@@ -35,31 +47,32 @@ h3,
 h4,
 h5,
 h6 {
-    color: #404040;
+    color: #0F1640;
     line-height: 36px;
 }
 h1 {
     margin-bottom: 18px;
-    font-size: 30px;
+    font-size: 40px;
 }
 h1 a{
+    color: #0F1640;
     margin-top:100px;
     display: block;
 }
 h2 {
-    font-size: 24px;
+    font-size: 28px;
 }
 h3 {
-    font-size: 18px;
+    font-size: 24px;
 }
 h4 {
-    font-size: 16px;
+    font-size: 22px;
 }
 h5 {
-    font-size: 14px;
+    font-size: 20px;
 }
 h6 {
-    font-size: 13px;
+    font-size: 18px;
 }
 hr {
     margin: 0 0 19px;
@@ -90,8 +103,8 @@ code, pre {
     font-family: Monaco, Andale Mono, Courier New, monospace;
 }
 code {
-    background-color: #fee9cc;
-    color: rgba(0, 0, 0, 0.75);
+    background-color: rgb(248, 248, 248);
+    color: rgb(51, 51, 51);
     padding: 1px 3px;
     font-size: 12px;
     -webkit-border-radius: 3px;
@@ -104,7 +117,7 @@ pre {
     margin: 0 0 18px;
     line-height: 16px;
     font-size: 11px;
-    border: 1px solid #d9d9d9;
+    border: 1px solid rgb(234, 234, 234);
     white-space: pre-wrap;
     word-wrap: break-word;
 }
