@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <title>Hack it baby - </title>
   <link rel="stylesheet" href="style.css" type="text/css" />
@@ -9,17 +10,16 @@
 </head>
 <body>
 <p>
-	<h1>Learn the hacker way, a hitchikers guide to the unix galaxy</h1>
+	<h1>Learn Unix the hacker way</h1>
 	<h3>By Oleiade <a href="http://twitter.com/oleiade">@oleiade</a></h3>
 </p>
 <div style="width:500px">
 
-<iframe src="http://ghbtns.com/github-btn.html?user=oleiade&repo=Learn-the-hacker-way&type=watch&count=true"
+<iframe src="http://ghbtns.com/github-btn.html?user=oleiade&repo=Learn-unix-the-hacker-way&type=watch&count=true"
   allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
 
- <iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.1333103182.html#_=1333404284780&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2oleiade.github.com%2FLearn-the-hacker-way%2F&amp;size=m&amp;text=Learn%20the%20hacker%20way%20,the%20Hitchikers%20guide%20to%20the%20Unix%20galaxy&amp;url=https%3A%2F%2Fgithub.com%2Foleiade%2FLearn-the-hacker-way&amp;via=oleiade" class="twitter-share-button twitter-count-horizontal" style="width: 107px; height: 20px; " title="Twitter Tweet Button"></iframe>
+ <iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.1333103182.html#_=1333404284780&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2oleiade.github.com%2FLearn-unix-the-hacker-way%2F&amp;size=m&amp;text=Learn%20Unix%20the%20hacker%20way&amp;url=https%3A%2F%2Fgithub.com%2Foleiade%2FLearn-unix-the-hacker-way&amp;via=oleiade" class="twitter-share-button twitter-count-horizontal" style="width: 107px; height: 20px; " title="Twitter Tweet Button"></iframe>
 <script id="twitter-wjs" src="//platform.twitter.com/widgets.js"></script><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
   <p>&nbsp;<br></p>
 </div>
 
@@ -43,7 +43,7 @@
 </ul></li>
 <li><a href="#les-fichiers-et-les-internets">Les fichiers et les internets</a><ul>
 <li><a href="#exercices-1">Exercices</a><ul>
-<li><a href="#pr&#233;ambule">Préambule</a></li>
+<li><a href="#préambule">Préambule</a></li>
 </ul></li>
 <li><a href="#defi-du-jour">Defi du jour</a></li>
 <li><a href="#background-1">Background</a></li>
@@ -109,7 +109,7 @@
 <p><strong>Nota</strong></p>
 <p>Au prealable, je te conseille de lire quelques petits tutos pour comprendre ce qu’est un systeme de fichiers, a quoi ca correspond, et a quoi ca ressemble :)</p>
 <p>En gros, le systeme de fichier, c’est le nom qu’on donne a l’agencement des dossiers sur ton ordinateur, c’est la ou il, toi, et tous les utilisateurs de l’ordi vont ranger leur donne. C’est comme un gros arbre avec des branches. La plupart des systemes unix partagent cette hierarchie.</p>
-<p>Ensuite, la commande qui te sauvera toujours la vie, et qui a donne naissance au fameux RTFM (Read The Fucking Manual) est <code>man</code>. Pour chaque commande du systeme, tu as ce qu‘on appelle un man. Genre, si tu tapes ’man cat’ tu auras le manuel utilisateur de la commande cat, detaillant son utilisation, et toutes les options que tu peux lui passer.</p>
+<p>Ensuite, la commande qui te sauvera toujours la vie, et qui a donne naissance au fameux RTFM (Read The Fucking Manual) est <code>man</code>. Pour chaque commande du systeme, tu as ce qu’on appelle un man. Genre, si tu tapes ‘man cat’ tu auras le manuel utilisateur de la commande cat, detaillant son utilisation, et toutes les options que tu peux lui passer.</p>
 <p>Voila, si c’est confus (c’est pas si facile de faire un cheminement clair), hesite pas a hurler pour avoir de l’aide :D</p>
 <h4 id="background"><a href="#TOC">Background</a></h4>
 <p>TODO</p>
@@ -118,7 +118,7 @@
 <p>Sur unix, il faut le savoir tout est fichier. Un fichier est un fichier, un dossier est un fichier, même une connexion internet est un fichier, simplement ils représentent tous les informations qu’ils contiennent d’une manière différente.</p>
 <p>Tu peux a peu près tout savoir de ton ordinateur en lisant les bons fichiers tu peux a peu près tout faire en modifiant les bons fichiers.</p>
 <p>Du coup au programme d’aujourd’hui manipulation de fichier, et trifouillage avec les internets.</p>
-<h5 id="pr&#233;ambule"><a href="#TOC">Préambule</a></h5>
+<h5 id="préambule"><a href="#TOC">Préambule</a></h5>
 <p><strong>1</strong>. Quelle est la différence entre ~/Desktop, /Users/MONUTILISATEUR/Desktop ? Quand tu tapes / et que tuappuies deux fois sur tab que se passe t’il ? Qu’en conclus-tu ? Ca ne te rappelle rien. Re-regarde la hiérarchie du système de fichier unix, ca devrait t’eclaire. Si tu ne comprends pas cette étape, HURLE.</p>
 <p><strong>2</strong>. Comment lire un fichier, c’est a dire, simplement l’afficher a l’ecran. (Sans utiliser nano, ou vi: deux commande native existe deja au sein d’unix)</p>
 <p><strong>3</strong>. Comment afficher les derniers lignes d’un fichier? comment afficher les premières? Quelle est l’option commune a ces deux commandes pour lui specifier combien de ligne depuis le debut/la fin on souhaite afficher la l’ecran.</p>
@@ -134,8 +134,7 @@ Easy as...
 123
 As simple as...
 Do re mi
-ABC, 123, baby, you and me
-</code></pre>
+ABC, 123, baby, you and me</code></pre>
 <ul>
 <li>Comment verifier que celui ci contient bien l’occurence 123?</li>
 <li>Comment trouver tous les fichiers dans ~/Desktop qui contienent l’occurence “As simple as…”</li>
@@ -174,8 +173,7 @@ ABC, 123, baby, you and me
 <p>Donc tu peux parfaitement, envoyer la sortie d’un programme, en tant qu’entree d’un autre. C’est trop abstrait?</p>
 <p><em>Un exemple</em>:</p>
 <p>Je peux trouver tous les fichiers qui contienent “test” dans le dossier <code>/Users/MONUTILISATEUR</code> en envoyant le resultat de la commande ls dans l’entree de grep, c’est l’operateur <code>pipe</code>:</p>
-<pre><code>ls /Users/MONUTILISATEUR | grep
-</code></pre>
+<pre><code>ls /Users/MONUTILISATEUR | grep</code></pre>
 <p><strong>5</strong>. Trouve une commande qui permette de lister tous les processus en cours sur ton ordinateur, et recherche-y firefox :)</p>
 <h5 id="le-droit-de-rien-lenvie-de-tout."><a href="#TOC">Le droit de rien, l’envie de tout.</a></h5>
 <p><strong>6</strong>. Qu’est-ce qu’un groupe sur un systeme unix? qu’est-ce qu’un administrateur? quel est son nom? Comment executer une commande en tant qu’administrateur?</p>
@@ -209,7 +207,7 @@ ABC, 123, baby, you and me
 <h5 id="le-shell-et-lenvironnement."><a href="#TOC">le shell et l’environnement.</a></h5>
 <p>Il y a bien longtemps, quand les ordianteurs prenaient plus de place que ton appartement, on s’y connectait a distance a partir de “terminaux”, des ecrans munis d’un clavier, et le programme charge d’interpreter tes commandes et de les transmettre a l’ordinateur s’appelait un shell.</p>
 <p>Aujourd’hui, tu as les trois dans le meme objet : ordinateur, ecran et logiciel pour transmettre tes commandes. Citons le poete : le shell est bien un coquillage, mais tu entends les “bruits” de l’ordinateur, et en plus tu peux lui parler.</p>
-<p>A chaque fois que tu lances un shell, ou interpreteur de commande, il charge un “environnment”, qui lui permet d‘avoir un certain nombre d’ informations sur ton systeme et tes preferences.</p>
+<p>A chaque fois que tu lances un shell, ou interpreteur de commande, il charge un “environnment”, qui lui permet d’avoir un certain nombre d’ informations sur ton systeme et tes preferences.</p>
 <p>Par exemple, ou sont enregistres les programmes sur ton ordinateur. Le shell te procure un certain nombre d’utilitaires integres pour te faciliter la vie, comme les <code>|</code>, les <code>&gt;&gt;</code> et <code>&lt;&lt;</code>, etc…</p>
 <p><strong>7</strong>. tape la commande <code>env</code></p>
 <p><strong>8</strong>. Dans tout le fratras qui s’affiche, quelle ligne contient :</p>
@@ -242,10 +240,9 @@ Options
       -n   No longer mark each name for export.
       -p   Display output in a form that may be reused as input.
 
-If no names are supplied, or if the `-p' option is given, a list of exported names is displayed.
+If no names are supplied, or if the `-p&#39; option is given, a list of exported names is displayed.
 
-The return status is zero unless an invalid option is supplied, one of the names is not a valid shell
-</code></pre>
+The return status is zero unless an invalid option is supplied, one of the names is not a valid shell</code></pre>
 <h4 id="background-3"><a href="#TOC">Background</a></h4>
 <p>TODO</p>
 <h3 id="shell-scripting"><a href="#TOC">Shell scripting</a></h3>

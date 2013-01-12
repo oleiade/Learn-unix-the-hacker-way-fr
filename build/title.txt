@@ -1,2 +1,2 @@
-% Hack it baby, a hitchikers guide to the Unix galaxy
+% Learn Unix, the hacker way
 % Oleiade
