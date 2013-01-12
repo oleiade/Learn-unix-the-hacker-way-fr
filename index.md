@@ -20,6 +20,10 @@ TODO
 
 TODO
 
+### Nomenclature
+
+TODO
+
 # Au jour le jour
 
 ### Les commandes et le file-system
@@ -221,22 +225,27 @@ Exemples:
 
 #### Exercices
 
-Sur unix,  il faut le savoir tout est fichier. Un fichier est un fichier, un dossier est un fichier, même une connexion internet est un fichier,  simplement ils représentent tous les informations qu'ils contiennent d'une manière différente.
+**1**. Quelle est la différence entre ~/Desktop,  /home/TONUTILISATEUR/Desktop (/Users/TONUTILISATEURS/Desktop sur OSX) ?
 
-Tu peux a peu près tout savoir de ton ordinateur en lisant les bons fichiers tu peux a peu près tout faire en modifiant les bons fichiers.
 
-Du coup au programme d'aujourd'hui manipulation de fichier,  et trifouillage avec les internets.
+Quand tu tapes / et que tu appuies deux fois sur la touche `Tab` que se passe t'il ? Qu'en conclus-tu ?  Ca ne te rappelle rien ?
 
-##### Préambule
+Jette à nouveau un coup d'oeil à la hiérarchie du système de fichiers unix, ça pourrait t'éclairer.
 
-**1**. Quelle est la différence entre ~/Desktop,  /Users/MONUTILISATEUR/Desktop ?  Quand tu tapes / et que tuappuies deux fois sur tab que se passe t'il ?  Qu'en conclus-tu ?  Ca ne te rappelle rien.
-Re-regarde la hiérarchie du système de fichier unix,  ca devrait t'eclaire.  Si tu ne comprends pas cette étape,  HURLE.
 
-**2**. Comment lire un fichier, c'est a dire, simplement l'afficher a l'ecran. (Sans utiliser nano, ou vi: deux commande native existe deja au sein d'unix)
+**2**. Comment lire un fichier, c'est à dire, à l'aide de quelle commande qui ne soit ni nano/vi ou tout autre "éditeur de text" conventionel en afficher le contenu à l'écran?
 
-**3**. Comment afficher les derniers lignes d'un fichier? comment afficher les premières? Quelle est l'option commune a ces deux commandes pour lui specifier combien de ligne depuis le debut/la fin on souhaite afficher la l'ecran.
 
-**4**. Quelle commande utiliser pour chercher des occurences (des expressions) dans un fichier. Par exemple, si tu cree un fichier avec le contenu suivant dans ~/Desktop:
+**3**. Comment afficher les dernières lignes d'un fichier?
+
+Comment afficher les premières?
+
+Quelle est l'option commune à ces deux commandes pour lui spécifier combien de lignes depuis le début/la fin on souhaite afficher à l'ecran?
+
+
+**4**. Quelle commande utiliser pour chercher des occurences (des expressions) dans un fichier?
+
+Par exemple, si tu crée un fichier `jackson5` avec le contenu suivant dans ~/Desktop:
 
     ABC
     Easy as...
@@ -251,40 +260,190 @@ Re-regarde la hiérarchie du système de fichier unix,  ca devrait t'eclaire.  S
     Do re mi
     ABC, 123, baby, you and me
 
-* Comment verifier que celui ci contient bien l'occurence 123?
-* Comment trouver tous les fichiers dans ~/Desktop qui contienent l'occurence "As simple as..."
-* Comment trouver tous les fichiers dans ~/Desktop qui matchent l'expression reguliere `^ABC$` (meme commande)?
+* Comment vérifier que celui-ci contient bien l'occurence 123?
 
-**5**. A l'aide de quelle commande peux-tu compter le nombre de lignes dans un fichier? Combien y en a t'il dans le fichier que je t'ai fait creer precedement ? :)
+* Comment trouver tous les fichiers dans ~/Desktop qui contienent l'occurence "As simple as..."
+
+* Comment trouver tous les fichiers dans ~/Desktop qui matchent l'expression régulière([quéquécé??](http://fr.wikipedia.org/wiki/Expression_rationnelle)) `^ABC$`?
+
+
+**5**. A l'aide de quelle commande peux-tu compter le nombre de lignes dans un fichier?
+
+Combien y en a t'il dans le fichier que je t'ai fait créer precedement ?
+
 
 **6**. Quelle commande utiliser pour chercher des fichiers/dossiers sur le file system?
 
-Comment trouver a l'aide de celle-ci tous les dossiers qui se nomment `MONUTILISATEUR` a l'interieur de /Users ?
+Comment trouver à l'aide de celle-ci tous les dossiers qui se nomment `MONUTILISATEUR` à l'interieur du dossier `/home` (`/Users` sur OSX)?
 
-Comment trouver a l'aide de celle-ci tous les fichiers qui s'appellent MONUTILISATEUR sur le disque dur, c'est a dire, a partir de / ? (n'hesite pas a revoir l'agencement et la hierarchie du filesystem unix :) )
+Comment trouver à l'aide de celle-ci tous les fichiers qui s'appellent MONUTILISATEUR sur le disque dur, c'est à dire, à partir de `/` ?
 
-**7**. Qu'est-ce qu'un lien sur un systeme unix? Quelle commande permet d'en faire un ? Quelle difference entre un lien symbolique et un hardlink?
+A cette fin, n'hésite pas à revoir l'agencement et la hierarchie du filesystem unix.
 
-Comment faire un lien symbolique du fichier precedemment creer dans le dossier desktop afin de pouvoir y acceder depuis `~/` ?
 
-*Allez, des trucs plus fun maintenant.*
+**7**. Qu'est-ce qu'un lien sur un système Unix? 
 
-**8**. Quelle est l'adresse ip `locale` de tous les ordinateurs? (l`ocalhost`)
+Quelle commande permet d'en faire un?
 
-Comment trouver l'ip d'un domaine? Par exemple: trouve l'ip de `oleiade.com`, celle de botify.com... Il y a plusieurs methodes possibles.
+Quelle difference entre un lien symbolique et un lien "dur"(ou hardlink)?
 
-Comment decouvrir le temps que mets un site a te repondre? avec quelle commande?
+Comment faire un lien symbolique du fichier précédemment crée dans le dossier `~/Desktop` afin de pouvoir y acceder depuis `~/`?
 
-**9**. Trouve une commande (qui n'est pas curl) qui te permette de telecharger un fichier depuis son url. Rappatrie, et affiche les 42 dernieres lignes du fichier situe a l'url suivante: `http://http://wiki.freebase.com/images/e/eb/Steve-martin-quad-sample.txt`
+**8**. Quelle est l'adresse ip `locale` de tous les ordinateurs? (`localhost`)
 
-#### Defi du jour
+Quelle phrase célèbre sur les internets fait référence à cette ip universelle?
 
-A l'aide de la commande curl (que tu auras probablement a installer, via homebrew ou autre), je voudrais que tu telecharges et ecrive dans un fichier morganetual_com.html dans `~/` la page d'accueil de http://morganetual.com
-Encore une fois, si des etapes ne sont pas assez detaillees, pas assez claires, besoin d'aide, HURLE :D
+Comment trouver l'ip d'un domaine?
+
+Par exemple: 
+
+Trouve l'ip de `oleiade.com`, celle de `twitter.com`... Comme toujours avec les systèmes Unix, il y à plusieurs methodes possibles.
+
+Comment découvrir le temps que met un site à te répondre? Avec quelle commande?
+
+
+**9**. Trouve une commande (qui ne soit pas `curl`) qui te permette de télécharger un fichier depuis son Url.
+
+Rappatrie dans `~/Desktop`, et affiche les 42 dernières lignes du fichier situé à l'url suivante: `http://wiki.freebase.com/images/e/eb/Steve-martin-quad-sample.txt`
+
+
+#### Défi
+
+A l'aide de la commande `curl`, que tu auras probablement à installer sur ta machine, je voudrais que tu télécharges et écrive dans un fichier oleiade_com.html dans `~/` la page d'accueil de http://oleiade.com.
+
 
 #### Background
 
+###### Hierarchie du systeme de fichier
+
 TODO
+
+###### Le Home directory
+
+TODO
+
+###### Description d'un fichier
+
+TODO
+
+###### Les expressions regulieres
+
+TODO
+
+###### ASCII
+
+TODO (Et Les caracteres non affichables qui permettent de demarque un mot, une ligne, un tab etc... (\n \t space). )
+
+###### Les liens
+
+TODO
+
+###### L'adresse IP
+
+TODO
+
+###### Url / Uri
+
+TODO
+
+
+
+#### Cheat codes
+
+###### Différence entre la notation `~/` et /home/MONUTILISATEUR
+
+C'est bien simple il n'y a virtuelement aucune différence entre la notation `~/` et `/home/MONUTILISATEUR`.
+
+En effet, le shell remplace automatiquement le symbole `~` par le chemin vers le `HOME` directory de l'utilisateur courant.
+
+
+###### Lire un ficher
+
+Généralement la commande utilisée est `cat`
+
+
+###### Afficher les dernières lignes d'un fichier 
+
+`tail monfichier`
+
+A noter que l'on peut explicitement déterminer combien de lignes nous souhaitons que tail affiche en partant de la fin à l'aide de l'option `-n`.
+
+`tail -n 200 monfichier` affichera ainsi les 200 dernières lignes du fichier.
+
+
+###### Afficher les premières lignes d'un fichier
+
+`head monfichier`
+
+La commande `head` partage avec `tail` les mêmes options et a un usage tout à fait similaire.
+
+
+###### Rechercher des occurences dans un fichier
+
+La commande `grep` permet de chercher des occurences dans des fichiers et respecte l'usage suivant:
+
+`grep occurence mesfichiers`
+
+Donc, pour chercher les occurences de "123" dans les fichiers du dossiers `~/Desktop`, celle-ci peut-être utilisée de la façon suivante:
+
+`grep "123" ~/Desktop/jackson5`
+
+Sachant que l'option `-r` comme vous l'aurez probablement déjà deviné indique à grep de chercher l'occurence récursivement dans les fichiers situés dans `~/Desktop` on peut rechercher l'occurence "As simple as..." dans ceux-ci comme ceci:
+
+`grep -r "As simple as..." ~/Desktop`
+
+
+Enfin, pour trouver tous les fichiers dans `~/Desktop` qui continent une occurence matchant avec l'expression regulière "^ABC$", il faut utiliser l'option `-G` de `grep`:
+
+`grep -rG "^ABC$" ~/Desktop`
+
+
+###### Compter le nombre de lignes dans un fichier
+
+`wc -l monfichier`
+
+
+###### Chercher des fichiers sur le file-system
+
+`find pointdedepart -name nomdefichier`
+
+Ainsi pour chercher tous les fichiers s'appellant `MONUTILISATEUR` dans `/home` (ou `/Users` sur OSX) on utilisera `find` comme suit:
+
+`find /home -name "MONUTILISATEUR"`
+
+
+###### Faire des liens sur un système unix
+
+La commande qui permet de faire des liens est : `ln`
+
+Aussi, `ln -s fichieralier fichierlie` permet de faire des liens symboliques. Donc, `ln -s ~/Desktop/jackson5 ~/` créera un lien symbolique `jackson5` dans ~/ Qui pointera vers le fichier `~/Desktop/jackson5`
+
+
+###### L'adresse ip locale universelle
+
+Universelement, l'adresse ip locale de tous les ordinateurs est `127.0.0.1` ainsi, toute communication avec cette adresse ip vous adressera toujours... à votre propre ordinateur. 
+
+La célèbre référence à découvrir était: "There no such place like 127.0.0.1" (Que l'on peut traduire comme suit: "Rien ne vaut 127.0.0.1")
+
+
+###### Trouver l'adresse ip d'un domaine
+
+La commande `ping` n'est pas initialement prévue à cette fin, cependant elle s'avère très pratique dès lors qu'il s'agit de trouver l'adresse ip d'un domaine. 
+
+Ainsi `ping oleiade.com` ou `ping twitter.com` devrait vous révéler l'ip de la machine qui vous "sert" les sites `oleiade.com` et `twitter.com`. 
+
+
+###### Télécharger des fichiers
+
+`wget url`
+
+Donc, pour télécharger le fichier mentioné dans la question et afficher les 42 dernieres lignes de son contenu: 
+
+`wget http://wiki.freebase.com/images/e/eb/Steve-martin-quad-sample.txt -o ~/Desktop/Steve-martin-quad-sample.txt` 
+
+puis
+
+`tail -n 42 ~/Desktop/Steve-martin-quad-sample.txt`
 
 
 ### Le root et l'anonymous

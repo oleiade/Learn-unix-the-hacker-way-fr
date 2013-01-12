@@ -34,6 +34,7 @@
 <li><a href="#qui">qui</a></li>
 </ul></li>
 <li><a href="#qui-a-commis-ceci">Qui a commis ceci?</a></li>
+<li><a href="#nomenclature">Nomenclature</a></li>
 </ul></li>
 <li><a href="#au-jour-le-jour">Au jour le jour</a><ul>
 <li><a href="#les-commandes-et-le-file-system">Les commandes et le file-system</a><ul>
@@ -55,11 +56,31 @@
 </ul></li>
 </ul></li>
 <li><a href="#les-fichiers-et-les-internets">Les fichiers et les internets</a><ul>
-<li><a href="#exercices-1">Exercices</a><ul>
-<li><a href="#préambule">Préambule</a></li>
+<li><a href="#exercices-1">Exercices</a></li>
+<li><a href="#défi-1">Défi</a></li>
+<li><a href="#background-1">Background</a><ul>
+<li><a href="#hierarchie-du-systeme-de-fichier">Hierarchie du systeme de fichier</a></li>
+<li><a href="#le-home-directory">Le Home directory</a></li>
+<li><a href="#description-dun-fichier">Description d’un fichier</a></li>
+<li><a href="#les-expressions-regulieres">Les expressions regulieres</a></li>
+<li><a href="#ascii">ASCII</a></li>
+<li><a href="#les-liens">Les liens</a></li>
+<li><a href="#ladresse-ip">L’adresse IP</a></li>
+<li><a href="#url-uri">Url / Uri</a></li>
 </ul></li>
-<li><a href="#defi-du-jour">Defi du jour</a></li>
-<li><a href="#background-1">Background</a></li>
+<li><a href="#cheat-codes-1">Cheat codes</a><ul>
+<li><a href="#différence-entre-la-notation-et-homemonutilisateur">Différence entre la notation <code>~/</code> et /home/MONUTILISATEUR</a></li>
+<li><a href="#lire-un-ficher">Lire un ficher</a></li>
+<li><a href="#afficher-les-dernières-lignes-dun-fichier">Afficher les dernières lignes d’un fichier</a></li>
+<li><a href="#afficher-les-premières-lignes-dun-fichier">Afficher les premières lignes d’un fichier</a></li>
+<li><a href="#rechercher-des-occurences-dans-un-fichier">Rechercher des occurences dans un fichier</a></li>
+<li><a href="#compter-le-nombre-de-lignes-dans-un-fichier">Compter le nombre de lignes dans un fichier</a></li>
+<li><a href="#chercher-des-fichiers-sur-le-file-system">Chercher des fichiers sur le file-system</a></li>
+<li><a href="#faire-des-liens-sur-un-système-unix">Faire des liens sur un système unix</a></li>
+<li><a href="#ladresse-ip-locale-universelle">L’adresse ip locale universelle</a></li>
+<li><a href="#trouver-ladresse-ip-dun-domaine">Trouver l’adresse ip d’un domaine</a></li>
+<li><a href="#télécharger-des-fichiers">Télécharger des fichiers</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#le-root-et-lanonymous">Le root et l’anonymous</a><ul>
 <li><a href="#exercices-2">Exercices</a><ul>
@@ -92,6 +113,8 @@
 <h4 id="qui"><a href="#TOC">qui</a></h4>
 <p>TODO</p>
 <h3 id="qui-a-commis-ceci"><a href="#TOC">Qui a commis ceci?</a></h3>
+<p>TODO</p>
+<h3 id="nomenclature"><a href="#TOC">Nomenclature</a></h3>
 <p>TODO</p>
 <h1 id="au-jour-le-jour"><a href="#TOC">Au jour le jour</a></h1>
 <h3 id="les-commandes-et-le-file-system"><a href="#TOC">Les commandes et le file-system</a></h3>
@@ -201,14 +224,15 @@
 </ul>
 <h3 id="les-fichiers-et-les-internets"><a href="#TOC">Les fichiers et les internets</a></h3>
 <h4 id="exercices-1"><a href="#TOC">Exercices</a></h4>
-<p>Sur unix, il faut le savoir tout est fichier. Un fichier est un fichier, un dossier est un fichier, même une connexion internet est un fichier, simplement ils représentent tous les informations qu’ils contiennent d’une manière différente.</p>
-<p>Tu peux a peu près tout savoir de ton ordinateur en lisant les bons fichiers tu peux a peu près tout faire en modifiant les bons fichiers.</p>
-<p>Du coup au programme d’aujourd’hui manipulation de fichier, et trifouillage avec les internets.</p>
-<h5 id="préambule"><a href="#TOC">Préambule</a></h5>
-<p><strong>1</strong>. Quelle est la différence entre ~/Desktop, /Users/MONUTILISATEUR/Desktop ? Quand tu tapes / et que tuappuies deux fois sur tab que se passe t’il ? Qu’en conclus-tu ? Ca ne te rappelle rien. Re-regarde la hiérarchie du système de fichier unix, ca devrait t’eclaire. Si tu ne comprends pas cette étape, HURLE.</p>
-<p><strong>2</strong>. Comment lire un fichier, c’est a dire, simplement l’afficher a l’ecran. (Sans utiliser nano, ou vi: deux commande native existe deja au sein d’unix)</p>
-<p><strong>3</strong>. Comment afficher les derniers lignes d’un fichier? comment afficher les premières? Quelle est l’option commune a ces deux commandes pour lui specifier combien de ligne depuis le debut/la fin on souhaite afficher la l’ecran.</p>
-<p><strong>4</strong>. Quelle commande utiliser pour chercher des occurences (des expressions) dans un fichier. Par exemple, si tu cree un fichier avec le contenu suivant dans ~/Desktop:</p>
+<p><strong>1</strong>. Quelle est la différence entre ~/Desktop, /home/TONUTILISATEUR/Desktop (/Users/TONUTILISATEURS/Desktop sur OSX) ?</p>
+<p>Quand tu tapes / et que tu appuies deux fois sur la touche <code>Tab</code> que se passe t’il ? Qu’en conclus-tu ? Ca ne te rappelle rien ?</p>
+<p>Jette à nouveau un coup d’oeil à la hiérarchie du système de fichiers unix, ça pourrait t’éclairer.</p>
+<p><strong>2</strong>. Comment lire un fichier, c’est à dire, à l’aide de quelle commande qui ne soit ni nano/vi ou tout autre “éditeur de text” conventionel en afficher le contenu à l’écran?</p>
+<p><strong>3</strong>. Comment afficher les dernières lignes d’un fichier?</p>
+<p>Comment afficher les premières?</p>
+<p>Quelle est l’option commune à ces deux commandes pour lui spécifier combien de lignes depuis le début/la fin on souhaite afficher à l’ecran?</p>
+<p><strong>4</strong>. Quelle commande utiliser pour chercher des occurences (des expressions) dans un fichier?</p>
+<p>Par exemple, si tu crée un fichier <code>jackson5</code> avec le contenu suivant dans ~/Desktop:</p>
 <pre><code>ABC
 Easy as...
 123
@@ -222,25 +246,90 @@ As simple as...
 Do re mi
 ABC, 123, baby, you and me</code></pre>
 <ul>
-<li>Comment verifier que celui ci contient bien l’occurence 123?</li>
-<li>Comment trouver tous les fichiers dans ~/Desktop qui contienent l’occurence “As simple as…”</li>
-<li>Comment trouver tous les fichiers dans ~/Desktop qui matchent l’expression reguliere <code>^ABC$</code> (meme commande)?</li>
+<li><p>Comment vérifier que celui-ci contient bien l’occurence 123?</p></li>
+<li><p>Comment trouver tous les fichiers dans ~/Desktop qui contienent l’occurence “As simple as…”</p></li>
+<li><p>Comment trouver tous les fichiers dans ~/Desktop qui matchent l’expression régulière(<a href="http://fr.wikipedia.org/wiki/Expression_rationnelle">quéquécé??</a>) <code>^ABC$</code>?</p></li>
 </ul>
-<p><strong>5</strong>. A l’aide de quelle commande peux-tu compter le nombre de lignes dans un fichier? Combien y en a t’il dans le fichier que je t’ai fait creer precedement ? :)</p>
+<p><strong>5</strong>. A l’aide de quelle commande peux-tu compter le nombre de lignes dans un fichier?</p>
+<p>Combien y en a t’il dans le fichier que je t’ai fait créer precedement ?</p>
 <p><strong>6</strong>. Quelle commande utiliser pour chercher des fichiers/dossiers sur le file system?</p>
-<p>Comment trouver a l’aide de celle-ci tous les dossiers qui se nomment <code>MONUTILISATEUR</code> a l’interieur de /Users ?</p>
-<p>Comment trouver a l’aide de celle-ci tous les fichiers qui s’appellent MONUTILISATEUR sur le disque dur, c’est a dire, a partir de / ? (n’hesite pas a revoir l’agencement et la hierarchie du filesystem unix :) )</p>
-<p><strong>7</strong>. Qu’est-ce qu’un lien sur un systeme unix? Quelle commande permet d’en faire un ? Quelle difference entre un lien symbolique et un hardlink?</p>
-<p>Comment faire un lien symbolique du fichier precedemment creer dans le dossier desktop afin de pouvoir y acceder depuis <code>~/</code> ?</p>
-<p><em>Allez, des trucs plus fun maintenant.</em></p>
-<p><strong>8</strong>. Quelle est l’adresse ip <code>locale</code> de tous les ordinateurs? (l<code>ocalhost</code>)</p>
-<p>Comment trouver l’ip d’un domaine? Par exemple: trouve l’ip de <code>oleiade.com</code>, celle de botify.com… Il y a plusieurs methodes possibles.</p>
-<p>Comment decouvrir le temps que mets un site a te repondre? avec quelle commande?</p>
-<p><strong>9</strong>. Trouve une commande (qui n’est pas curl) qui te permette de telecharger un fichier depuis son url. Rappatrie, et affiche les 42 dernieres lignes du fichier situe a l’url suivante: <code>http://http://wiki.freebase.com/images/e/eb/Steve-martin-quad-sample.txt</code></p>
-<h4 id="defi-du-jour"><a href="#TOC">Defi du jour</a></h4>
-<p>A l’aide de la commande curl (que tu auras probablement a installer, via homebrew ou autre), je voudrais que tu telecharges et ecrive dans un fichier morganetual_com.html dans <code>~/</code> la page d’accueil de http://morganetual.com Encore une fois, si des etapes ne sont pas assez detaillees, pas assez claires, besoin d’aide, HURLE :D</p>
+<p>Comment trouver à l’aide de celle-ci tous les dossiers qui se nomment <code>MONUTILISATEUR</code> à l’interieur du dossier <code>/home</code> (<code>/Users</code> sur OSX)?</p>
+<p>Comment trouver à l’aide de celle-ci tous les fichiers qui s’appellent MONUTILISATEUR sur le disque dur, c’est à dire, à partir de <code>/</code> ?</p>
+<p>A cette fin, n’hésite pas à revoir l’agencement et la hierarchie du filesystem unix.</p>
+<p><strong>7</strong>. Qu’est-ce qu’un lien sur un système Unix?</p>
+<p>Quelle commande permet d’en faire un?</p>
+<p>Quelle difference entre un lien symbolique et un lien “dur”(ou hardlink)?</p>
+<p>Comment faire un lien symbolique du fichier précédemment crée dans le dossier <code>~/Desktop</code> afin de pouvoir y acceder depuis <code>~/</code>?</p>
+<p><strong>8</strong>. Quelle est l’adresse ip <code>locale</code> de tous les ordinateurs? (<code>localhost</code>)</p>
+<p>Quelle phrase célèbre sur les internets fait référence à cette ip universelle?</p>
+<p>Comment trouver l’ip d’un domaine?</p>
+<p>Par exemple:</p>
+<p>Trouve l’ip de <code>oleiade.com</code>, celle de <code>twitter.com</code>… Comme toujours avec les systèmes Unix, il y à plusieurs methodes possibles.</p>
+<p>Comment découvrir le temps que met un site à te répondre? Avec quelle commande?</p>
+<p><strong>9</strong>. Trouve une commande (qui ne soit pas <code>curl</code>) qui te permette de télécharger un fichier depuis son Url.</p>
+<p>Rappatrie dans <code>~/Desktop</code>, et affiche les 42 dernières lignes du fichier situé à l’url suivante: <code>http://wiki.freebase.com/images/e/eb/Steve-martin-quad-sample.txt</code></p>
+<h4 id="défi-1"><a href="#TOC">Défi</a></h4>
+<p>A l’aide de la commande <code>curl</code>, que tu auras probablement à installer sur ta machine, je voudrais que tu télécharges et écrive dans un fichier oleiade_com.html dans <code>~/</code> la page d’accueil de http://oleiade.com.</p>
 <h4 id="background-1"><a href="#TOC">Background</a></h4>
+<h6 id="hierarchie-du-systeme-de-fichier"><a href="#TOC">Hierarchie du systeme de fichier</a></h6>
 <p>TODO</p>
+<h6 id="le-home-directory"><a href="#TOC">Le Home directory</a></h6>
+<p>TODO</p>
+<h6 id="description-dun-fichier"><a href="#TOC">Description d’un fichier</a></h6>
+<p>TODO</p>
+<h6 id="les-expressions-regulieres"><a href="#TOC">Les expressions regulieres</a></h6>
+<p>TODO</p>
+<h6 id="ascii"><a href="#TOC">ASCII</a></h6>
+<p>TODO (Et Les caracteres non affichables qui permettent de demarque un mot, une ligne, un tab etc… (space). )</p>
+<h6 id="les-liens"><a href="#TOC">Les liens</a></h6>
+<p>TODO</p>
+<h6 id="ladresse-ip"><a href="#TOC">L’adresse IP</a></h6>
+<p>TODO</p>
+<h6 id="url-uri"><a href="#TOC">Url / Uri</a></h6>
+<p>TODO</p>
+<h4 id="cheat-codes-1"><a href="#TOC">Cheat codes</a></h4>
+<h6 id="différence-entre-la-notation-et-homemonutilisateur"><a href="#TOC">Différence entre la notation <code>~/</code> et /home/MONUTILISATEUR</a></h6>
+<p>C’est bien simple il n’y a virtuelement aucune différence entre la notation <code>~/</code> et <code>/home/MONUTILISATEUR</code>.</p>
+<p>En effet, le shell remplace automatiquement le symbole <code>~</code> par le chemin vers le <code>HOME</code> directory de l’utilisateur courant.</p>
+<h6 id="lire-un-ficher"><a href="#TOC">Lire un ficher</a></h6>
+<p>Généralement la commande utilisée est <code>cat</code></p>
+<h6 id="afficher-les-dernières-lignes-dun-fichier"><a href="#TOC">Afficher les dernières lignes d’un fichier</a></h6>
+<p><code>tail monfichier</code></p>
+<p>A noter que l’on peut explicitement déterminer combien de lignes nous souhaitons que tail affiche en partant de la fin à l’aide de l’option <code>-n</code>.</p>
+<p><code>tail -n 200 monfichier</code> affichera ainsi les 200 dernières lignes du fichier.</p>
+<h6 id="afficher-les-premières-lignes-dun-fichier"><a href="#TOC">Afficher les premières lignes d’un fichier</a></h6>
+<p><code>head monfichier</code></p>
+<p>La commande <code>head</code> partage avec <code>tail</code> les mêmes options et a un usage tout à fait similaire.</p>
+<h6 id="rechercher-des-occurences-dans-un-fichier"><a href="#TOC">Rechercher des occurences dans un fichier</a></h6>
+<p>La commande <code>grep</code> permet de chercher des occurences dans des fichiers et respecte l’usage suivant:</p>
+<p><code>grep occurence mesfichiers</code></p>
+<p>Donc, pour chercher les occurences de “123” dans les fichiers du dossiers <code>~/Desktop</code>, celle-ci peut-être utilisée de la façon suivante:</p>
+<p><code>grep &quot;123&quot; ~/Desktop/jackson5</code></p>
+<p>Sachant que l’option <code>-r</code> comme vous l’aurez probablement déjà deviné indique à grep de chercher l’occurence récursivement dans les fichiers situés dans <code>~/Desktop</code> on peut rechercher l’occurence “As simple as…” dans ceux-ci comme ceci:</p>
+<p><code>grep -r &quot;As simple as...&quot; ~/Desktop</code></p>
+<p>Enfin, pour trouver tous les fichiers dans <code>~/Desktop</code> qui continent une occurence matchant avec l’expression regulière “^ABC$”, il faut utiliser l’option <code>-G</code> de <code>grep</code>:</p>
+<p><code>grep -rG &quot;^ABC$&quot; ~/Desktop</code></p>
+<h6 id="compter-le-nombre-de-lignes-dans-un-fichier"><a href="#TOC">Compter le nombre de lignes dans un fichier</a></h6>
+<p><code>wc -l monfichier</code></p>
+<h6 id="chercher-des-fichiers-sur-le-file-system"><a href="#TOC">Chercher des fichiers sur le file-system</a></h6>
+<p><code>find pointdedepart -name nomdefichier</code></p>
+<p>Ainsi pour chercher tous les fichiers s’appellant <code>MONUTILISATEUR</code> dans <code>/home</code> (ou <code>/Users</code> sur OSX) on utilisera <code>find</code> comme suit:</p>
+<p><code>find /home -name &quot;MONUTILISATEUR&quot;</code></p>
+<h6 id="faire-des-liens-sur-un-système-unix"><a href="#TOC">Faire des liens sur un système unix</a></h6>
+<p>La commande qui permet de faire des liens est : <code>ln</code></p>
+<p>Aussi, <code>ln -s fichieralier fichierlie</code> permet de faire des liens symboliques. Donc, <code>ln -s ~/Desktop/jackson5 ~/</code> créera un lien symbolique <code>jackson5</code> dans ~/ Qui pointera vers le fichier <code>~/Desktop/jackson5</code></p>
+<h6 id="ladresse-ip-locale-universelle"><a href="#TOC">L’adresse ip locale universelle</a></h6>
+<p>Universelement, l’adresse ip locale de tous les ordinateurs est <code>127.0.0.1</code> ainsi, toute communication avec cette adresse ip vous adressera toujours… à votre propre ordinateur.</p>
+<p>La célèbre référence à découvrir était: “There no such place like 127.0.0.1” (Que l’on peut traduire comme suit: “Rien ne vaut 127.0.0.1”)</p>
+<h6 id="trouver-ladresse-ip-dun-domaine"><a href="#TOC">Trouver l’adresse ip d’un domaine</a></h6>
+<p>La commande <code>ping</code> n’est pas initialement prévue à cette fin, cependant elle s’avère très pratique dès lors qu’il s’agit de trouver l’adresse ip d’un domaine.</p>
+<p>Ainsi <code>ping oleiade.com</code> ou <code>ping twitter.com</code> devrait vous révéler l’ip de la machine qui vous “sert” les sites <code>oleiade.com</code> et <code>twitter.com</code>.</p>
+<h6 id="télécharger-des-fichiers"><a href="#TOC">Télécharger des fichiers</a></h6>
+<p><code>wget url</code></p>
+<p>Donc, pour télécharger le fichier mentioné dans la question et afficher les 42 dernieres lignes de son contenu:</p>
+<p><code>wget http://wiki.freebase.com/images/e/eb/Steve-martin-quad-sample.txt -o ~/Desktop/Steve-martin-quad-sample.txt</code></p>
+<p>puis</p>
+<p><code>tail -n 42 ~/Desktop/Steve-martin-quad-sample.txt</code></p>
 <h3 id="le-root-et-lanonymous"><a href="#TOC">Le root et l’anonymous</a></h3>
 <h4 id="exercices-2"><a href="#TOC">Exercices</a></h4>
 <h5 id="un-peu-plus-sur-le-shell"><a href="#TOC">Un peu plus sur le shell</a></h5>
