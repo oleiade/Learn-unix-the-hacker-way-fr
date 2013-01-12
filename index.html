@@ -26,8 +26,10 @@
 <p><img src="img/learn-unix-the-hacker-way.jpg"></p>
 <div id="TOC">
 <ul>
-<li><a href="#prelude">Prelude</a></li>
 <li><a href="#introduction">Introduction</a><ul>
+<li><a href="#daccord-mais-unix-cest-quoi">D’accord, mais, Unix, c’est quoi?</a></li>
+<li><a href="#et-comment-est-ce-que-lon-va-sy-prendre">Et comment est-ce que l’on va s’y prendre?</a></li>
+<li><a href="#et-le-dessein">Et le dessein?</a></li>
 <li><a href="#de-quoi-sagit-il">De quoi s’agit-il</a></li>
 <li><a href="#pourquoi-tout-ce-tintouin">Pourquoi tout ce tintouin</a></li>
 <li><a href="#a-destination-de">a destination de?</a><ul>
@@ -103,17 +105,47 @@
 </ul></li>
 </ul>
 </div>
-<h2 id="prelude"><a href="#TOC">Prelude</a></h2>
-<p>TODO</p>
 <h1 id="introduction"><a href="#TOC">Introduction</a></h1>
+<p><code>Learn Unix the hacker way</code> avant d’être un livre, est un tutoriel.</p>
+<p>Il est modestement destiné à guider ceux qui desirent apprendre les fondamentaux d’Unix dans leur quête.</p>
+<p>A éclairer ceux qui souhaitent apprendre un peu plus de la chose avec qui ils passent leur journée: leur ordinateur.</p>
+<p>Ou encore, plus simplement, les intarissables curieux.</p>
+<h4 id="daccord-mais-unix-cest-quoi"><a href="#TOC">D’accord, mais, Unix, c’est quoi?</a></h4>
+<p>Et bien Unix, c’est un système d’exploitation. Crée en 1969 par deux ingenieurs des Bell labs: <a href="http://fr.wikipedia.org/wiki/Ken_Thompson">Ken Thompson</a> et <a href="http://fr.wikipedia.org/wiki/Dennis_Ritchie">Dennis Ritchie</a>(également créateur du langage <code>C</code>) aux etats-unis.</p>
+<p>C’est à dire que c’est “un ensemble de programmes qui dirigent l’utilisation des capacités d’un ordinateur par des logiciels applicatifs”(<a href="http://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27exploitation">Source</a>).</p>
+<p>C’est, en très gros, le cerveau qui permet à votre ordinateur de faire des choses, comme stocker des informations sur votre disque dur, exécuter vos applications, commander à votre écran d’afficher vos photos.</p>
+<p>Vous connaissez sans doute déjà d’autres systèmes d’exploitation, parfois même sans le savoir. Parmi eux: Windows, OSX, Linux… [TO BE CONTINUED TODO]</p>
+<h4 id="et-comment-est-ce-que-lon-va-sy-prendre"><a href="#TOC">Et comment est-ce que l’on va s’y prendre?</a></h4>
+<p>Ce livre s’organise en sessions relatives aux thématiques des systèmes unix.</p>
+<p>Chaque session consistera en une serie d’exercices didactiques et progressifs.</p>
+<p>Suivi d’explications des concepts et de l’historique des concepts manipulés lors de ceux-ci.</p>
+<p>Enfin, des “cheat codes”, en fait les solutions des exercices, au cas où les moins perseverant d’entre vous se cherchent une béquille.</p>
+<h4 id="et-le-dessein"><a href="#TOC">Et le dessein?</a></h4>
+<p>Learn Unix the hacker way vous propose une manière didactique, excitante, parfois rigolote, mais surtout autodidacte de vous former a l’ecosystème Unix.</p>
+<p>Son but n’est pas de faire de vous des stars du clavier, quand bien même certains pourraient se découvrir une vocation.</p>
+<p>Son but n’est pas non plus de remplir votre cerveau d’un tas de connaissances que vous vous empresseriez d’oublier.</p>
+<p>Mais bien plutôt de vous apprendre à apprendre par vous-même. A chercher, vous interroger, tourner en rond, eprouver cette joie indicible de parvenir à resoudre un problème après des heures à l’avoir tourné et retourné dans tous les sens.</p>
+<p>Son but est de vous donner envie; de connaitre mieux votre camarade, j’ai nommé l’ordinateur; de maitriser ses compétences, de l’utiliser sans restrictions; d’en apprendre encore plus.</p>
 <h3 id="de-quoi-sagit-il"><a href="#TOC">De quoi s’agit-il</a></h3>
 <h3 id="pourquoi-tout-ce-tintouin"><a href="#TOC">Pourquoi tout ce tintouin</a></h3>
-<p>TODO</p>
+<p>[ TODO: * On utilise les ordinateurs quotidienement, on delai tout un tas d’operation aux ordinateurs, on leur confie notre vie, sans vraiment ni savoir les utiliser, ni comprendre comment ils fonctionnent. Confier les cles de chef soi a un inconnu? Non. Alors pourquoi confier</p>
+<ul>
+<li><p>En plus, les ordinateurs, et tout ce qui tourne autour ont souvent la reputation d’etre complexe, complique a apprehender, une elite souvent deconsidere, alors que comme nous l’ont prouve recemment arduino et raspberry pi, ils sont fun, peuvent s’averer de veritables objets de creation, et sont un vrai sujet d’emerveillement et d’apprentissage constant.</p></li>
+<li><p>L’informatique est un domaine “scientifique” certes, mais une opportunite incomparable de rendre la science didactiqe, rigolote, et “reel”. Elle permet d’apprendre et d’exprimenter avec le minimum de bagages possibles et sans risque (blague sur marie curie, le radium tout ca)</p></li>
+</ul>
+<p>]</p>
 <h3 id="a-destination-de"><a href="#TOC">a destination de?</a></h3>
 <h4 id="qui"><a href="#TOC">qui</a></h4>
-<p>TODO</p>
+<p>[ TODO: * A l’origine ecrit pour une journaliste equipee d’un mac, desireuse d’apprendre comment il marchait “vraiment”.</p>
+<ul>
+<li><p>N’importe qui, du berceau au tombeau, peut realiser ces exercices</p></li>
+<li><p>Plus, n’importe qui devrait y trouver son compte, de celui qui veut juste se la jouer en soiree avec un terminal noir sur blanc, celle qui veut mieux comprendre comment ca marche vraiment, a celui ou celle qui veut devenir le prochain guru des hackers, et suivre le lapin blanc.</p></li>
+<li><p>Pense pour etre didactique, progressif, et sans contrainte temporel. On peut le prendre, l’arreter, le reprendre, l’oublier, et y revenir.</p></li>
+</ul>
+<p>]</p>
 <h3 id="qui-a-commis-ceci"><a href="#TOC">Qui a commis ceci?</a></h3>
-<p>TODO</p>
+<p>[ TODO: * Theo crevon, ingenieur a la sauvette. Poete a l’aide de petits bouts de codes. Photographe parfois. Et ecrivain selon l’humeur. Desireux de partager, et de vulgariser, ce que sa formation et son experience lui ont fait acquerir. * Avec l’aide de Nathan mustaki : description * Avec comme cobaye totalement consentent Morgane Tual</p>
+<p>]</p>
 <h3 id="nomenclature"><a href="#TOC">Nomenclature</a></h3>
 <p>TODO</p>
 <h1 id="au-jour-le-jour"><a href="#TOC">Au jour le jour</a></h1>
